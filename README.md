@@ -1,352 +1,232 @@
-# EmailScanSIH — AI Email Threat Detection, GeoLocation & Forensic Intelligence
+# EmailScanSIH
 
-> **Smart India Hackathon 2026 · SIH26106 · Cyber Security Cell**
+> AI-assisted email threat detection, threat intelligence, and forensic investigation platform for Smart India Hackathon 2026 (SIH26106).
 
-EmailScanSIH is an evidence-first email security and forensic analysis platform. It accepts raw `.eml` messages and combines independent security signals to produce an explainable threat assessment rather than relying on a single machine-learning prediction.
+EmailScanSIH analyzes raw `.eml` email messages and combines multiple security signals into an explainable assessment. Instead of treating a single ML prediction as the verdict, the platform correlates email content, headers, authentication results, URLs, domains, IPs, attachments, threat-intelligence data, and forensic evidence.
 
-The system is designed for **phishing, Business Email Compromise (BEC), spoofing, credential harvesting, brand impersonation, suspicious infrastructure, malicious URLs/domains, authentication anomalies, and attachment-based indicators**.
+## Why EmailScanSIH
 
-> **Core principle:** probabilistic ML is supporting evidence. The final assessment is based on multiple technical and contextual signals that investigators can trace back to the original message and extracted artifacts.
+Modern phishing and Business Email Compromise (BEC) messages can look legitimate while hiding suspicious infrastructure, authentication failures, manipulated URLs, impersonation, or malicious attachments. EmailScanSIH is designed to expose those signals and present them together so an analyst can understand **why** a message was flagged.
 
----
+## Core capabilities
 
-## What the platform does
+| Area | What the platform provides |
+|---|---|
+| Email forensics | MIME parsing, message extraction, header inspection, metadata and artifact handling |
+| Authentication analysis | SPF, DKIM and DMARC result extraction and contextual interpretation |
+| Relay analysis | `Received`-chain reconstruction, relay/origin context and path analysis |
+| URL & domain analysis | URL extraction, normalization, suspicious patterns, domain intelligence and lookalike detection |
+| IOC extraction | URLs, domains, IPv4 addresses, hashes and other security indicators |
+| Threat intelligence | Provider enrichment, normalized results, caching, provider health/fallback handling and consensus information |
+| ML detection | TF-IDF + Logistic Regression email classifier with reproducible training/evaluation tooling |
+| BEC detection | Urgency, payment/bank-change, gift-card, executive impersonation and related patterns |
+| Attachment forensics | Static file identification, hashes, entropy, archive inspection, macro/PDF/script/executable indicators and IOC extraction |
+| Threat fusion | Combines deterministic and probabilistic signals into an explainable risk assessment |
+| Evidence graph | Links findings back to source artifacts with deterministic identifiers and provenance relationships |
+| Investigation timeline | Correlates evidence and events into a traceable investigation sequence |
+| Forensic intelligence | IOC prioritization, origin/relay context, contradictions, ATT&CK-aligned references and evidence-backed recommendations |
+| Campaign correlation | Finds relationships between indicators and related analyses |
+| Durable analysis jobs | Queued analysis, bounded retries, cancellation and stale-job recovery |
+| Gmail ingestion | Read-only Gmail message retrieval through OAuth for analysis workflows |
+| Security controls | Authentication, authorization, validation, resource limits and SSRF defenses |
+
+## Analysis pipeline
 
 ```text
-Raw .eml
-   │
-   ▼
-Email ingestion + safe parsing
-   │
-   ├── Headers / routing / Received chain
-   ├── SPF / DKIM / DMARC / authentication evidence
-   ├── URLs / domains / IPs / hashes / IOCs
-   ├── Content / NLP / ML
-   └── Attachments / static artifact analysis
-   │
-   ▼
-Threat Intelligence enrichment
-   │
-   ▼
-BEC + brand impersonation + forensic intelligence
-   │
-   ▼
-Threat fusion + risk scoring
-   │
-   ├── Explainable findings
-   ├── Evidence provenance + integrity
-   ├── Timeline / correlations / attack path
-   └── Investigation intelligence / reporting
-   │
-   ▼
-Security dashboard / API
+                         Raw .eml
+                            │
+                            ▼
+               Ingestion + safe MIME parsing
+                            │
+         ┌──────────────────┼──────────────────┐
+         ▼                  ▼                  ▼
+   Header / relay      URL / domain / IOC   Content / ML
+   authentication           analysis          analysis
+         │                  │                  │
+         └──────────────────┼──────────────────┘
+                            ▼
+                  Threat-intelligence
+                       enrichment
+                            │
+                  ┌─────────┴─────────┐
+                  ▼                   ▼
+             BEC / spoofing     Attachment
+             / impersonation      forensics
+                  └─────────┬─────────┘
+                            ▼
+                  Threat fusion + risk
+                         scoring
+                            │
+       ┌────────────────────┼────────────────────┐
+       ▼                    ▼                    ▼
+ Explainable findings  Evidence graph      Timeline / cases
+                            │                    │
+                            └─────────┬──────────┘
+                                      ▼
+                           Forensic intelligence
+                                      │
+                                      ▼
+                              API / web dashboard
 ```
 
----
+### Evidence-first design
 
-## Key capabilities
+The project deliberately separates **evidence** from **probability**.
 
-| Capability | Implementation focus |
-|---|---|
-| **Raw Email Forensics** | MIME parsing, headers, metadata, message integrity, body and artifact extraction |
-| **Routing Analysis** | `Received` chain reconstruction and relay/origin context |
-| **SPF / DKIM / DMARC** | Authentication results are preserved as evidence and interpreted with other signals |
-| **URL Intelligence** | URL extraction, normalization, suspicious patterns and enrichment |
-| **Domain Intelligence** | Domain characteristics, lookalikes, typosquatting and homoglyph-style indicators |
-| **IOC Extraction** | URLs, domains, IPs, hashes and other security indicators |
-| **Threat Intelligence Fusion** | Multiple external providers with normalized results, caching, failure handling and consensus |
-| **ML Detection** | Explainable TF-IDF + Logistic Regression pipeline trained offline |
-| **BEC Detection** | Executive/freemail impersonation, payment/bank-change, gift-card and urgency/secrecy patterns |
-| **Attachment Static Forensics** | File identification, hashes, entropy, archive inspection, macro/execution indicators, PDF/script checks and IOC extraction |
-| **Risk Engine** | Multi-signal fusion of deterministic and probabilistic evidence |
-| **Explainable Analysis** | Human-readable findings linked to supporting evidence |
-| **Evidence Graph** | Deterministic evidence nodes, lineage and append-only custody records |
-| **Investigation Timeline** | Deterministic event ordering, relationships and attack-path traversal |
-| **Forensic Intelligence** | Evidence-backed IOC prioritization, root/origin context, ATT&CK-aligned findings, contradictions and recommendations |
-| **Campaign Correlation** | Connects related IOC/artifact candidates across analyses |
-| **Durable Analysis Jobs** | Queued work, bounded retries, cancellation and stale-job recovery |
-| **Gmail Ingestion** | Read-only Gmail message retrieval through OAuth for analysis workflows |
-| **Security Controls** | Authentication, authorization, input validation, resource limits and SSRF protections |
+Deterministic observations—such as authentication outcomes, extracted IOCs, routing anomalies, attachment findings, and external threat-intelligence results—remain traceable evidence. ML probabilities add contextual classification signals but are not treated as proof of maliciousness.
 
----
+This design also makes uncertainty visible. A message can have a high model probability while still receiving a different overall assessment when surrounding technical evidence is benign or contradictory.
 
 ## Architecture
 
-The backend is built as a modular FastAPI application with distinct analysis services and explicit data contracts between stages.
-
-```text
-                         ┌───────────────────────┐
-                         │      Raw .eml         │
-                         └───────────┬───────────┘
-                                     ▼
-                         ┌───────────────────────┐
-                         │ Ingestion / MIME      │
-                         │ Parsing + Validation  │
-                         └───────────┬───────────┘
-                                     ▼
-              ┌────────────────────┼────────────────────┐
-              │                    │                    │
-              ▼                    ▼                    ▼
-      Header / Auth        URL / Domain / IOC      Content / ML
-      & relay analysis          analysis             analysis
-              │                    │                    │
-              └────────────────────┼────────────────────┘
-                                   ▼
-                         ┌───────────────────────┐
-                         │ Threat Intelligence  │
-                         │ + Provider Consensus │
-                         └───────────┬───────────┘
-                                     ▼
-                         ┌───────────────────────┐
-                         │ BEC / Impersonation   │
-                         │ Attachment Forensics  │
-                         └───────────┬───────────┘
-                                     ▼
-                         ┌───────────────────────┐
-                         │ Threat Fusion + Risk  │
-                         └───────────┬───────────┘
-                                     ▼
-              ┌────────────────────┼────────────────────┐
-              │                    │                    │
-              ▼                    ▼                    ▼
-        Explainability       Evidence Graph        Investigation
-                                   │             Timeline / Correlation
-                                   └──────────┬─────────┘
-                                              ▼
-                                   Forensic Intelligence
-                                              │
-                                              ▼
-                                      API / Dashboard
-```
-
-### Evidence and investigation flow
-
-```text
-Email
-  ↓
-Evidence extraction
-  ↓
-Evidence nodes + cryptographic identifiers
-  ↓
-Custody / provenance relationships
-  ↓
-Timeline events
-  ↓
-Cross-artifact relationships
-  ↓
-Attack-path traversal
-  ↓
-Forensic intelligence
-```
-
----
-
-## Threat assessment philosophy
-
-EmailScanSIH deliberately separates **evidence** from **probability**.
-
-Deterministic signals such as authentication results, observed IOCs, suspicious routing, attachment indicators and threat-intelligence findings are represented as evidence. ML probabilities provide contextual classification signals and are not treated as proof of maliciousness.
-
-This is especially important for false-positive control. A short legitimate transactional email can produce an elevated standalone ML probability while still remaining low risk when the surrounding technical evidence is benign. The platform therefore evaluates the whole message rather than blindly promoting a single classifier output to the final verdict.
-
----
-
-## Machine Learning
-
-The current production-oriented public training workflow uses an explainable **TF-IDF + Logistic Regression** classifier.
-
-Example training command:
-
-```powershell
-python ml/training/train.py `
-  --dataset ml/datasets/real/public_email_threats.jsonl `
-  --artifact ml/models/email_threat_tfidf_logreg_public.joblib
-```
-
-Important ML engineering practices in the project include:
-
-- deterministic seeds and reproducible training;
-- exact duplicate controls and dataset validation;
-- held-out evaluation partitions;
-- calibration-aware probability handling;
-- separate robustness evaluation for synthetic/human test sets;
-- distinction between model probability and final forensic risk;
-- adversarial/red-team validation of model and end-to-end behavior.
-
-### ML limitation worth noting
-
-The classifier is not presented as universally accurate. Evaluation exposed sensitivity to very short, finance-heavy benign messages, which is why the system uses multi-signal risk fusion instead of treating the classifier as a standalone verdict engine.
-
-Do not interpret a benchmark score from a single dataset as proof of generalized phishing-detection performance.
-
----
-
-## Threat Intelligence
-
-The backend normalizes IOC enrichment from multiple providers and tracks provider-level status instead of assuming every external source is always available.
-
-The threat-intelligence layer supports normalized IOC records, provider results, confidence/reputation metadata, references, failures/fallback states and consensus/disagreement information.
-
-Operational protections include bounded HTTP connection pools, short timeouts, bounded caching, provider circuit-breaker behavior and SSRF defenses for unsafe IP targets.
-
-External TI failures are treated as **informational system conditions** and do not silently manufacture a lower-risk result.
-
----
-
-## Attachment static forensics
-
-Attachments are treated as untrusted input and are analyzed statically rather than executed.
-
-The forensic layer supports checks including:
-
-- Shannon entropy and file fingerprints;
-- MIME/magic-byte identification;
-- ZIP/TAR/GZIP/BZIP archive inspection;
-- Zip Slip and archive-bomb protections;
-- nested executable and multi-extension indicators;
-- OOXML macro / remote-template / execution-keyword detection;
-- PDF action / JavaScript / embedded-file indicators;
-- PE/script indicators;
-- extracted URLs and IPv4 IOCs with provenance metadata.
-
-Static inspection is intentionally bounded and should not be interpreted as a guarantee that arbitrary future malware formats are fully detected.
-
----
-
-## Evidence integrity & chain of custody
-
-The evidence layer provides deterministic canonicalization and SHA-256-derived identifiers for evidence and custody records.
-
-Evidence can connect:
-
-```text
-Email headers
-   ├── relay hops
-   ├── authentication
-   ├── URLs / domains / IPs
-   ├── attachments
-   ├── threat-intelligence results
-   ├── ML findings
-   ├── BEC findings
-   └── reports / derived intelligence
-```
-
-This allows investigators to trace a finding back to the supporting artifact instead of relying on an opaque final score.
-
-> The evidence system is cryptographically verifiable, but this repository does **not** claim that its local ledger is equivalent to an external blockchain or an independently notarized legal evidentiary system.
-
----
-
-## Investigation timeline & correlation
-
-The investigation engine consumes evidence-manifest data and produces deterministic timeline events and relationships.
-
-It can represent relationships such as:
-
-- parent/child evidence relationships;
-- relay-path relationships;
-- indicator-to-event relationships;
-- derived investigation relationships;
-- bounded attack-path traversal with cycle protection.
-
-The internal investigation identifier is a technical grouping mechanism connecting an email, its analysis, evidence, timeline and derived intelligence. It is not intended to expose a heavy case-management workflow.
-
----
-
-## Forensic intelligence
-
-The intelligence layer turns lower-level evidence into structured investigation context, including:
-
-- prioritized IOCs;
-- origin/relay context;
-- authentication intelligence;
-- URL/domain intelligence;
-- attachment intelligence;
-- BEC intelligence;
-- ATT&CK-aligned technique references where evidence supports them;
-- evidence-backed confidence separated from ML probability;
-- contradiction and uncertainty reporting;
-- deterministic investigator recommendations.
-
-Recommendations are generated from available evidence and should be reviewed by an analyst before operational action.
-
----
-
-## Gmail ingestion
-
-The platform includes a read-only Gmail ingestion flow for analysis.
-
-The backend can retrieve raw Gmail messages through Google OAuth, refresh encrypted access credentials when needed, queue analyses, and expose analysis status through the application API.
-
-No mailbox modification operation is required for the core analysis workflow.
-
----
-
-## Security engineering
-
-Because raw email and extracted indicators are untrusted input, the backend applies defensive controls including:
-
-- request authentication and authorization;
-- input validation and bounded payload processing;
-- MIME-part and archive resource limits;
-- SSRF protections for unsafe destinations;
-- safe static attachment inspection;
-- secret/environment separation;
-- bounded external-provider timeouts and retries;
-- provider circuit breakers;
-- stale analysis recovery;
-- deterministic evidence handling;
-- avoidance of automatic attachment execution.
-
-Production deployments should additionally apply network segmentation, managed secrets, HTTPS, database hardening, least-privilege credentials, logging controls and an appropriate retention policy.
-
----
-
-## Project structure
+The repository is organized as a modular full-stack application:
 
 ```text
 EmailScanSIH/
 ├── backend/
 │   ├── app/
-│   │   ├── api/
-│   │   ├── core/
-│   │   ├── detection/
-│   │   ├── models/
-│   │   ├── schemas/
-│   │   └── services/
-│   ├── alembic/
-│   ├── contracts/
-│   ├── docs/
-│   ├── reports/
-│   ├── samples/
-│   ├── scripts/
-│   ├── tests/
+│   │   ├── api/                 # FastAPI routes
+│   │   ├── core/                # configuration, security, OAuth helpers
+│   │   ├── detection/           # detection and risk-fusion components
+│   │   ├── models/              # database models
+│   │   ├── schemas/             # API/data contracts
+│   │   └── services/            # parsing, enrichment, forensics, TI, jobs
+│   ├── alembic/                 # database migrations
+│   ├── contracts/               # evidence-ledger contract
+│   ├── samples/                 # safe sample emails for development/testing
+│   ├── scripts/                 # dataset, training and maintenance scripts
+│   ├── tests/                   # backend and security-focused tests
 │   └── requirements.txt
-├── frontend/                 # React / TypeScript dashboard
-├── ml/                       # Training code and ignored model artifacts
-├── docs/                     # Project documentation / datasets
+├── frontend/                    # React + TypeScript + Vite dashboard
+├── ml/
+│   ├── datasets/                # small controlled fixtures; large/raw data ignored
+│   ├── inference/               # inference helpers
+│   └── training/                # training and evaluation pipeline
+├── docs/                        # architecture and project documentation
 ├── .gitignore
 ├── LICENSE
 └── README.md
 ```
 
-Generated databases, local environments, large datasets and trained model weights should remain outside the Git repository unless intentionally required as reproducible fixtures.
+## Technology stack
 
----
+**Backend:** Python, FastAPI, Pydantic, SQLAlchemy, Alembic, PostgreSQL-compatible storage.
 
-## Local setup
+**Frontend:** React, TypeScript, Vite and Tailwind CSS.
+
+**ML:** scikit-learn TF-IDF + Logistic Regression; optional BERT/DistilBERT training tooling is kept separate from the main lightweight inference path.
+
+**Security / intelligence:** SPF/DKIM/DMARC analysis, DNS/WHOIS-style enrichment, URL/domain analysis, IOC processing, multiple public threat-intelligence integrations, static attachment forensics, evidence correlation and ATT&CK-aligned mapping.
+
+## Machine learning
+
+The primary explainable classifier is a TF-IDF + Logistic Regression pipeline. Training and evaluation code lives under `ml/training/` and the project includes dataset validation, deduplication controls, reproducible seeds and held-out evaluation workflows.
+
+Example:
+
+```bash
+python ml/training/train.py \
+  --dataset ml/datasets/real/public_email_threats.jsonl \
+  --artifact ml/models/email_threat_tfidf_logreg_public.joblib
+```
+
+Large datasets and trained model binaries are intentionally excluded from normal Git history. Keep reproducible dataset sources and training instructions documented rather than committing multi-hundred-megabyte artifacts.
+
+### Interpreting ML results
+
+The classifier is not presented as universally accurate. Short, finance-heavy, or unusual legitimate emails can be difficult for text-only classifiers, which is why EmailScanSIH uses multi-signal fusion rather than promoting model probability directly to the final risk decision.
+
+## Threat intelligence
+
+The threat-intelligence layer is designed to normalize results from multiple sources and preserve provider-level outcomes. This supports:
+
+- IOC reputation and enrichment;
+- provider confidence and references;
+- cache-aware lookups;
+- bounded timeouts and retries;
+- failure/fallback states;
+- provider disagreement and consensus handling;
+- SSRF protection for externally resolved targets.
+
+A third-party provider being unavailable should not silently fabricate a safe result.
+
+## Attachment static forensics
+
+Attachments are treated as untrusted input and are inspected **without executing them**. The forensic layer includes checks such as:
+
+- file type and magic-byte identification;
+- SHA-256/file fingerprinting;
+- entropy analysis;
+- ZIP/TAR/GZIP/BZIP archive inspection;
+- nested executable and multi-extension indicators;
+- Office macro and remote-template indicators;
+- PDF action/JavaScript/embedded-file indicators;
+- PE and script indicators;
+- URL/IP IOC extraction with provenance.
+
+Archive and parsing operations are bounded to reduce resource-exhaustion risk.
+
+## Evidence integrity & investigations
+
+The evidence layer creates deterministic identifiers from canonicalized evidence and records relationships between source artifacts and derived findings.
+
+```text
+Email
+ ├── Headers / relay hops
+ ├── Authentication results
+ ├── URLs / domains / IPs
+ ├── Attachments
+ ├── Threat-intelligence results
+ ├── ML findings
+ ├── BEC / impersonation findings
+ └── Derived investigation intelligence
+```
+
+Investigation services can then build timeline events, evidence relationships, attack-path views, related-analysis links and forensic intelligence.
+
+The repository does **not** claim that a local evidence ledger is equivalent to independent legal notarization or an external blockchain-based chain of custody.
+
+## Gmail ingestion
+
+EmailScanSIH includes a read-only Gmail workflow using Google OAuth. The backend can retrieve raw messages for analysis, persist the analysis workflow, and expose processing status through the application API.
+
+Mailbox modification is not required for the core detection workflow.
+
+## Security design
+
+Because email content and extracted indicators are untrusted, the application includes defensive controls around:
+
+- authentication and authorization;
+- request and payload validation;
+- MIME and archive resource limits;
+- SSRF protection;
+- safe static attachment inspection;
+- secret/environment separation;
+- bounded external HTTP operations;
+- provider circuit-breaker/fallback behavior;
+- stale-job recovery;
+- deterministic evidence handling.
+
+For production, use HTTPS, managed secrets, least-privilege database credentials, network segmentation, hardened database configuration, controlled logs, and an explicit retention policy.
+
+## Local development
 
 ### Prerequisites
 
 - Python 3.10+
 - Node.js 18+
-- PostgreSQL 15+ or a compatible PostgreSQL/Supabase database
+- PostgreSQL 15+ (or compatible PostgreSQL/Supabase deployment)
 
-### Backend
+### 1. Clone
 
 ```bash
 git clone https://github.com/bgmihacker-ddos/EmailScanSIH.git
 cd EmailScanSIH
+```
+
+### 2. Backend
+
+```bash
 cd backend
 python -m venv .venv
 ```
@@ -363,10 +243,17 @@ macOS/Linux:
 source .venv/bin/activate
 ```
 
-Install dependencies and migrations:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Create your environment file from `backend/.env.example` and configure the database and optional integrations.
+
+Apply migrations:
+
+```bash
 python -m alembic upgrade head
 ```
 
@@ -376,9 +263,9 @@ Run the API:
 uvicorn app.main:app --reload
 ```
 
-### Frontend
+### 3. Frontend
 
-From the repository root:
+Open a second terminal from the repository root:
 
 ```bash
 cd frontend
@@ -386,130 +273,72 @@ npm install
 npm run dev
 ```
 
-### Configuration
+### Configuration and secrets
 
-Create an environment file from `backend/.env.example` and provide the required database, authentication and optional intelligence-provider settings.
+Never commit real credentials. Keep values such as these in local environment configuration or your deployment secret manager:
 
 ```env
 DATABASE_URL=postgresql://<user>:<password>@<host>:5432/<database>
 ```
 
-Never commit:
+Do not commit API keys, OAuth client secrets, JWT signing secrets, service-role keys, database passwords, or private mailbox data.
 
-- API keys;
-- OAuth client secrets;
-- JWT signing secrets;
-- database passwords;
-- service-role keys;
-- private email data.
+## Worker operation
 
----
-
-## Production-style worker operation
-
-The backend includes durable analysis worker and retention-process entry points.
-
-Analysis worker:
-
-```bash
-python -m app.services.analysis_worker --loop
-```
-
-Retention process:
-
-```bash
-python -m app.services.retention
-```
-
-Bounded retry and stale-job settings are controlled through the backend configuration.
-
-For hosted deployments, validate the full lifecycle rather than assuming that a request returning `202` proves durable completion:
+For environments using durable analysis jobs, the backend exposes worker/retention entry points in the source tree. A typical lifecycle is:
 
 ```text
-upload
-  ↓
-queued
-  ↓
-worker claims job
-  ↓
-analysis executes
-  ↓
-results persisted
-  ↓
-evidence generated
-  ↓
-status becomes complete
+request → queued → worker claims job → analysis → persistence → evidence → complete
 ```
 
----
+A successful HTTP request or `202 Accepted` should not be interpreted as proof that background processing has completed; inspect the persisted job/status result.
 
 ## Testing
 
-Run the backend test suite from the `backend` environment:
+Run backend tests from the backend environment:
 
 ```bash
 pytest
 ```
 
-The project also contains dedicated validation for attachment forensics, threat-intelligence behavior, evidence integrity, investigation correlation and full-system/red-team scenarios.
+The test suite includes coverage for API behavior, parsing robustness, authentication, BEC detection, ML classification, threat-intelligence handling, attachment forensics, evidence integrity, investigation correlation and system-level validation.
 
-A green unit-test run is not, by itself, proof that the detector is universally accurate. Security evaluation should include representative benign traffic, phishing/BEC variants, malformed inputs, adversarial examples, external-provider failures and resource-exhaustion cases.
+For security evaluation, combine automated tests with representative benign emails, phishing/BEC variants, malformed messages, adversarial cases, provider failures and resource-exhaustion scenarios.
 
----
+## Repository hygiene
 
-## Current engineering status
+The repository is intended to contain **source code, reproducible configuration, safe fixtures, tests and useful documentation**.
 
-The repository focuses on **maturity and reliability rather than feature-count inflation**.
+The following should remain out of Git history unless deliberately required:
 
-Completed engineering areas include:
+- `.env` and other secret-bearing files;
+- local databases such as `*.db` / `*.sqlite3`;
+- `node_modules/`, Python virtual environments and build output;
+- large raw/processed datasets;
+- trained ML binaries and model caches;
+- temporary analysis exports and logs;
+- local agent/tool state.
 
-- ✅ email parsing and header forensics
-- ✅ SPF/DKIM/DMARC evidence handling
-- ✅ URL/domain/IOC analysis
-- ✅ ML classification and evaluation workflow
-- ✅ BEC and impersonation detection
-- ✅ threat-intelligence normalization and fusion
-- ✅ attachment static forensics
-- ✅ evidence graph and chain-of-custody model
-- ✅ investigation timeline and correlation engine
-- ✅ forensic-intelligence layer
-- ✅ authentication/authorization protections on investigation APIs
-- ✅ durable analysis-job infrastructure
-- ✅ red-team and adversarial validation work
+The `.gitignore` is configured accordingly.
 
-The project is intentionally **not** advertising unfinished roadmap items as completed capabilities.
+## Project status
 
----
+The current codebase contains implemented work across email parsing, authentication analysis, URL/domain/IOC analysis, ML classification, BEC/impersonation detection, threat-intelligence enrichment, attachment forensics, evidence correlation, investigation timelines, forensic intelligence, durable analysis jobs, Gmail ingestion, frontend dashboards and security-focused testing.
 
-## What this repository does not claim
-
-To keep the project technically honest:
-
-- It does not claim perfect or universal phishing-detection accuracy.
-- It does not treat ML probability as ground truth.
-- It does not treat IP geolocation as attacker attribution.
-- It does not claim local evidence storage is equivalent to blockchain notarization.
-- It does not execute malicious attachments during static analysis.
-- It does not treat third-party threat-intelligence availability as guaranteed.
-
----
+Capabilities and limitations should be judged from the implementation and test coverage in the repository rather than from a single benchmark number.
 
 ## Responsible use
 
-EmailScanSIH is intended for **education, research, prototyping and authorized defensive security analysis**.
+EmailScanSIH is intended for education, research, prototyping and authorized defensive security analysis. Only analyze email data, accounts and infrastructure for which you have appropriate authorization.
 
-Analyze only email data and infrastructure for which you have appropriate authorization. Threat-intelligence observations, geolocation, automated classifications and forensic conclusions should be reviewed in context before incident-response or other operational decisions.
-
----
+Threat-intelligence observations, geolocation signals, automated classifications and forensic findings should be interpreted in context before operational or incident-response decisions.
 
 ## License
 
-MIT License. See [`LICENSE`](LICENSE).
-
----
+This project is released under the MIT License. See [`LICENSE`](LICENSE).
 
 ## Project goal
 
-> **Turn suspicious emails into evidence-backed, explainable security intelligence.**
+> **Turn suspicious emails into explainable, evidence-backed security intelligence.**
 
 Built for **Smart India Hackathon 2026 — SIH26106**.
