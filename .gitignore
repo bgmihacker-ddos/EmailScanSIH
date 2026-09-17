@@ -1,0 +1,98 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+*.egg
+venv/
+.env/
+.venv/
+backend/venv/
+backend/.venv/
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.ruff_cache/
+frontend/.vite/
+frontend/dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Backend
+backend/.env
+backend/*.db
+backend/*.sqlite3
+
+# ML
+ml/models/*.pkl
+ml/models/*.joblib
+ml/models/*.h5
+ml/models/*.pt
+ml/models/*.safetensors
+ml/models/*.bin
+ml/models/distilbert_email_classifier/*
+!ml/models/distilbert_email_classifier/.gitkeep
+ml/datasets/raw/*
+ml/datasets/processed/*
+!ml/datasets/raw/.gitkeep
+!ml/datasets/processed/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# Coverage
+htmlcov/
+.coverage
+coverage.xml
+
+# Testing
+.tox/
+.nox/
+
+# TypeScript build artifacts
+*.tsbuildinfo
+
+backend.zip
+GitHub.txt
+graphify-out/
+analysis_result*.json
+scratch/
+
+# Claude Code
+.claude/
+
+# Claude Code
+.claude/
+
+# Claude Code
+.claude/
+
+# Large training datasets
+docs/dataset/*.csv
+ml/datasets/real/*.jsonl

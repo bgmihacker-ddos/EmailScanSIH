@@ -1,0 +1,30 @@
+From: "Accounts Payable" <billing@vendor-invoice-mail.com>
+To: finance@example.com
+Subject: OVERDUE: Invoice Inv-88421 - Immediate Payment Required
+Date: Tue, 13 Sep 2026 11:05:00 +0000
+Message-ID: <malware-555@vendor-invoice-mail.com>
+Received: from invoice-host.vendor-invoice-mail.com (198.51.100.77) by mx.example.com
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="invoice-boundary"
+
+--invoice-boundary
+Content-Type: text/plain; charset="UTF-8"
+
+Dear Finance,
+
+Attached is the overdue invoice relative to the services provided last month.
+Please kindly review the attached document and process the payment at your earliest convenience to avoid late fees.
+
+Note: Since this is a protected document, you will need to "Enable Content" or "Enable Macros" upon opening it to view the full billing details.
+
+Thank you,
+Accounts Payable Department
+
+--invoice-boundary
+Content-Type: application/vnd.ms-excel; name="Invoice_88421.xlsm"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Invoice_88421.xlsm"
+
+UEsDBBQAAAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAZXhsL3ZjUHJvamVjdC5iaW5VAgAA
+c29tZW1hbHdhcmVwYXlsb2FkYmFzZTY0ZHVtbXltYWNyb2NvZGVoZXJlCg==
+--invoice-boundary--

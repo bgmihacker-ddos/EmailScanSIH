@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Email Threat Detection Platform",
+    "output": "email-threat-detection.architecture.html",
+    "quality_profile": "showcase",
+    "locale": "en",
+    "repository": {
+      "url": "https://github.com/bgmihacker-ddos/email-threat-detection.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "cdcc853f441806064e6eb1941eaacaee0bff6e8b"
+    },
+    "views": [
+      {
+        "id": "primary-analysis",
+        "label": "Primary analysis path",
+        "focus": ["operator", "frontend", "api", "pipeline", "database"],
+        "note": "Follow an email from the analyst interface through API orchestration, detection, and durable findings."
+      },
+      {
+        "id": "threat-intelligence",
+        "label": "Threat intelligence and scoring",
+        "focus": ["pipeline", "ml", "integrations", "database"],
+        "note": "Isolate feature extraction, model scoring, and external reputation checks."
+      },
+      {
+        "id": "evidence-and-realtime",
+        "label": "Evidence and realtime delivery",
+        "focus": ["api", "realtime", "database", "ledger"],
+        "note": "Trace persisted evidence, live updates, and ledger anchoring."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "operator",
+      "type": "external",
+      "label": "Security Analyst",
+      "sublabel": "Browser user",
+      "pos": [40, 300],
+      "size": [150, 64],
+      "sources": [{ "path": "frontend/src/App.tsx", "label": "application entry" }]
+    },
+    {
+      "id": "frontend",
+      "type": "frontend",
+      "label": "Investigation Console",
+      "sublabel": "React 19 + Vite",
+      "pos": [250, 300],
+      "size": [170, 64],
+      "tag": "MapLibre / Recharts",
+      "sources": [{ "path": "frontend/src/App.tsx", "label": "frontend" }]
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "FastAPI Application",
+      "sublabel": "HTTP API + auth",
+      "pos": [480, 300],
+      "size": [170, 64],
+      "tag": "Uvicorn",
+      "sources": [
+        { "path": "backend/app/main.py", "label": "API entry" },
+        { "path": "backend/app/api/__init__.py", "label": "routes" }
+      ]
+    },
+    {
+      "id": "pipeline",
+      "type": "security",
+      "label": "Threat Analysis Pipeline",
+      "sublabel": "Parse, correlate, fuse",
+      "pos": [710, 300],
+      "size": [190, 64],
+      "tag": "multi-signal detection",
+      "sources": [
+        { "path": "backend/app/detection/threat_fusion.py", "label": "detection" },
+        { "path": "backend/app/services/email_parser.py", "label": "services" }
+      ]
+    },
+    {
+      "id": "database",
+      "type": "database",
+      "label": "Evidence Database",
+      "sublabel": "SQLAlchemy + PostgreSQL",
+      "pos": [960, 300],
+      "size": [180, 64],
+      "sources": [
+        { "path": "backend/app/database/connection.py", "label": "database" },
+        { "path": "backend/app/models/analysis.py", "label": "models" }
+      ]
+    },
+    {
+      "id": "ml",
+      "type": "backend",
+      "label": "ML Scoring",
+      "sublabel": "scikit-learn + joblib",
+      "pos": [710, 140],
+      "size": [190, 64],
+      "tag": "classification",
+      "sources": [{ "path": "backend/app/ml/classifier.py", "label": "runtime ML" }]
+    },
+    {
+      "id": "integrations",
+      "type": "external",
+      "label": "Reputation Integrations",
+      "sublabel": "DNS, DKIM, SPF, HTTP",
+      "pos": [480, 140],
+      "size": [170, 64],
+      "sources": [{ "path": "backend/app/integrations/domain_intelligence.py", "label": "integrations" }]
+    },
+    {
+      "id": "realtime",
+      "type": "messagebus",
+      "label": "Realtime Updates",
+      "sublabel": "WebSocket channel",
+      "pos": [480, 500],
+      "size": [170, 64],
+      "sources": [{ "path": "backend/app/realtime.py", "label": "realtime" }]
+    },
+    {
+      "id": "ledger",
+      "type": "cloud",
+      "label": "Evidence Ledger",
+      "sublabel": "Solidity contract",
+      "pos": [960, 500],
+      "size": [180, 64],
+      "tag": "tamper-evident anchor",
+      "sources": [{ "path": "backend/contracts/EvidenceLedger.sol", "label": "contract" }]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Email Threat Detection Backend",
+      "wraps": ["api", "pipeline", "database", "ml", "realtime", "ledger"],
+      "pad": 32
+    }
+  ],
+  "connections": [
+    { "id": "operator-console", "from": "operator", "to": "frontend", "label": "HTTPS", "variant": "emphasis" },
+    { "id": "console-api", "from": "frontend", "to": "api", "label": "REST / auth" },
+    { "id": "api-analysis", "from": "api", "to": "pipeline", "label": "analyze email", "variant": "emphasis", "labelDy": -26 },
+    { "id": "pipeline-store", "from": "pipeline", "to": "database", "label": "findings + evidence", "labelDy": -26 },
+    { "id": "pipeline-ml", "from": "pipeline", "to": "ml", "label": "features", "fromSide": "top", "toSide": "bottom", "labelDx": -58 },
+    { "id": "pipeline-integrations", "from": "pipeline", "to": "integrations", "label": "reputation checks", "fromSide": "top", "toSide": "bottom", "labelDx": 70 },
+    { "id": "api-realtime", "from": "api", "to": "realtime", "label": "broadcast", "variant": "dashed", "fromSide": "bottom", "toSide": "top", "labelDy": 24 },
+    { "id": "realtime-console", "from": "realtime", "to": "frontend", "label": "live status", "variant": "dashed", "fromSide": "top", "toSide": "bottom" },
+    { "id": "database-ledger", "from": "database", "to": "ledger", "label": "anchor evidence", "variant": "security", "fromSide": "bottom", "toSide": "top", "labelDy": 24 }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "User surface", "items": ["React investigation console", "Threat maps, charts, and analyst workflows"] },
+    { "dot": "emerald", "title": "Detection core", "items": ["FastAPI coordinates analysis", "Signals combine parser, reputation, and ML evidence"] },
+    { "dot": "rose", "title": "Trust boundary", "items": ["Findings persist in the evidence database", "Selected evidence can be anchored in Solidity"] }
+  ]
+}

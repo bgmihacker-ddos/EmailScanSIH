@@ -1,0 +1,33 @@
+From: "Johnathan Smith (Chief Executive Officer)" <ceo@acme-corp.com>
+To: "Sarah Jenkins (Finance Director)" <sarah.jenkins@acme-corp.com>
+Subject: CONFIDENTIAL & URGENT: Acquisition Wire Transfer Request
+Date: Mon, 07 Sep 2026 12:45:00 +0000
+Message-ID: <bec-exec-20260907-99@acme-corp.com>
+Return-Path: <exec.drop@free-mail-redirect.xyz>
+Reply-To: <ceo.confidential.acme@mail-private-proxy.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Received: from edge.acme-corp.com (edge.acme-corp.com [198.51.100.1])
+    by mail.acme-corp.com with ESMTPS id B3E4C5
+    for <sarah.jenkins@acme-corp.com>; Mon, 07 Sep 2026 12:45:06 +0000
+Received: from mail.foreign-untrusted.org (mail.foreign-untrusted.org [198.51.100.200])
+    by edge.acme-corp.com with ESMTP id E5F6G7
+    for <sarah.jenkins@acme-corp.com>; Mon, 07 Sep 2026 12:45:02 +0000
+Authentication-Results: edge.acme-corp.com;
+    spf=softfail smtp.mailfrom=exec.drop@free-mail-redirect.xyz;
+    dkim=none;
+    dmarc=fail (p=quarantine) header.from=acme-corp.com
+Received-SPF: softfail (IP 198.51.100.200 is not designated by acme-corp.com)
+
+Sarah,
+
+I am currently in an executive meeting and cannot take calls. We are finalizing a strategic acquisition today.
+Please process an urgent wire transfer of $85,000 to the overseas legal escrow account immediately.
+
+Reply directly to this email for the bank routing and account numbers so we can complete this transaction before banking cut-off time.
+Keep this strictly confidential between us until the formal press release.
+
+Thanks,
+Johnathan Smith
+Chief Executive Officer
+Acme Corp

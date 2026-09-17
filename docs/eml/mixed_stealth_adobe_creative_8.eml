@@ -1,0 +1,26 @@
+Return-Path: <"Adobe Creative Service" <licensing@ad0be-creative-cloud.net>>
+Delivered-To: victim-8@enterprise.org
+Received: from mail.ad0be-creative-cloud.net (mail.ad0be-creative-cloud.net [203.0.113.28]) by mx.google.com with ESMTP id 7a7f2d449a87; Tue, 15 Sep 2026 07:47:32 +0000
+Received-SPF: softfail (ad0be-creative-cloud.net: domain designates 203.0.113.28 as permitted sender) client-ip=203.0.113.28;
+Authentication-Results: mx.google.com; spf=softfail smtp.mailfrom=ad0be-creative-cloud.net; dkim=fail header.i=@ad0be-creative-cloud.net; dmarc=fail header.from=ad0be-creative-cloud.net
+From: "Adobe Creative Service" <licensing@ad0be-creative-cloud.net>
+To: victim-8@enterprise.org
+Subject: Your Adobe Enterprise license key will terminate in 48 hours
+Date: Tue, 15 Sep 2026 07:47:32 +0000
+Message-ID: <233152c6-4a59-496e-89d9-cf17334e9e6b@ad0be-creative-cloud.net>
+Reply-To: reply-8@ad0be-creative-cloud.net
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Notice from Adobe Creative.
+
+Your Adobe Enterprise license key will terminate in 48 hours.
+
+To protect your access and avoid immediate service interruption, please access the portal below:
+https://ad0be-creative-cloud.net/activate-key
+
+Reference ID: REF-12920
+Timestamp: 2026-09-17T09:42:32.845182+00:00
+
+Adobe Creative Automated Customer Operations

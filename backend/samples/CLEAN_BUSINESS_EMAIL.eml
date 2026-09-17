@@ -1,0 +1,21 @@
+From: "IT Support" <it.admin@example.com>
+To: engineering-team@example.com
+Subject: Notice: Scheduled GitHub Enterprise Maintenance on Friday
+Date: Tue, 13 Sep 2026 12:00:00 +0000
+Message-ID: <clean-business-12345@example.com>
+Received: from mail.example.com (10.0.0.12) by mx.example.com
+Authentication-Results: mx.example.com; spf=pass (mx.example.com: domain of it.admin@example.com designates 10.0.0.12 as permitted sender) smtp.mailfrom=it.admin@example.com; dkim=pass header.i=@example.com; dmarc=pass (p=reject sp=reject dis=none) header.from=example.com
+Content-Type: text/plain; charset="UTF-8"
+
+Hi Team,
+
+Just a quick reminder that we will have scheduled maintenance on our internal GitHub Enterprise instance this Friday at 10:00 PM EST.
+
+The system will be read-only for approximately 2 hours while we apply the latest security patches.
+
+Please make sure to push any pending work before the maintenance window begins.
+
+Let us know if you have any questions.
+
+Best,
+IT Infrastructure Team

@@ -1,0 +1,26 @@
+Return-Path: <"Intuit QuickBooks Service" <invoices@quickb00ks-accounting.org>>
+Delivered-To: victim-12@enterprise.org
+Received: from mail.quickb00ks-accounting.org (mail.quickb00ks-accounting.org [203.0.113.32]) by mx.google.com with ESMTP id afc7570e03ad; Fri, 11 Sep 2026 05:54:32 +0000
+Received-SPF: softfail (quickb00ks-accounting.org: domain designates 203.0.113.32 as permitted sender) client-ip=203.0.113.32;
+Authentication-Results: mx.google.com; spf=softfail smtp.mailfrom=quickb00ks-accounting.org; dkim=fail header.i=@quickb00ks-accounting.org; dmarc=fail header.from=quickb00ks-accounting.org
+From: "Intuit QuickBooks Service" <invoices@quickb00ks-accounting.org>
+To: victim-12@enterprise.org
+Subject: New electronic invoice received from Miller Supplies ($12,450.00)
+Date: Fri, 11 Sep 2026 05:54:32 +0000
+Message-ID: <809fc443-1efb-4105-80e7-f849c39bbdf1@quickb00ks-accounting.org>
+Reply-To: reply-12@quickb00ks-accounting.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Notice from Intuit QuickBooks.
+
+New electronic invoice received from Miller Supplies ($12,450.00).
+
+To protect your access and avoid immediate service interruption, please access the portal below:
+https://quickb00ks-accounting.org/invoices/pay
+
+Reference ID: REF-16920
+Timestamp: 2026-09-17T09:42:32.845193+00:00
+
+Intuit QuickBooks Automated Customer Operations

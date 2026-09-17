@@ -1,0 +1,33 @@
+From: "PayPal Service" <service@paypal.com>
+To: "User Account" <user@target.com>
+Subject: Your account has been restricted - Resolution Required
+Date: Mon, 07 Sep 2026 13:10:00 +0000
+Message-ID: <spoof-pp-20260907@fakemailserver.net>
+Return-Path: <nobody@fakemailserver.net>
+Reply-To: <dispute-center@paypal-security-verification.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Received: from mx.target.com (mx.target.com [192.0.2.10])
+    by mail.target.com with ESMTP id S1P2O3O4
+    for <user@target.com>; Mon, 07 Sep 2026 13:10:05 +0000
+Received: from evil-spoofer.net (evil-spoofer.net [198.51.100.99])
+    by mx.target.com with ESMTP id M9N8B7
+    for <user@target.com>; Mon, 07 Sep 2026 13:10:01 +0000
+Authentication-Results: mx.target.com;
+    spf=fail (paypal.com: IP 198.51.100.99 is not authorized) smtp.mailfrom=nobody@fakemailserver.net;
+    dkim=fail;
+    dmarc=fail (p=reject) header.from=paypal.com
+Received-SPF: fail (IP 198.51.100.99 is not permitted by domain paypal.com)
+
+Dear Customer,
+
+We detected unusual activity on your PayPal account from an unrecognized device.
+For your protection, we have temporarily restricted your access.
+
+To restore your account and verify your identity, visit our Resolution Center:
+https://paypal-security-verification.com/restore
+
+Failure to update your profile within 24 hours will result in permanent account closure.
+
+Sincerely,
+PayPal Security Team

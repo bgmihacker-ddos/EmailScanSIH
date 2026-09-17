@@ -1,0 +1,58 @@
+Return-Path: <"Guy K. Kloss" <r.xewwa@massey.ac.nz>>
+Delivered-To: team@enterprise.org
+Received: from mail.massey.ac.nz (mail.massey.ac.nz [209.85.220.41]) by mx.google.com with ESMTP id 67ffc1cca5b0; Thu, 10 Sep 2026 14:00:32 +0000
+Received-SPF: pass (massey.ac.nz: domain designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=massey.ac.nz; dkim=pass header.i=@massey.ac.nz; dmarc=pass header.from=massey.ac.nz
+From: "Guy K. Kloss" <r.xewwa@massey.ac.nz>
+To: team@enterprise.org
+Subject: Call for Papers - NZCSRSC 08
+Date: Thu, 10 Sep 2026 14:00:32 +0000
+Message-ID: <1b9aad7e-8757-441d-94ff-27316910d55d@massey.ac.nz>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Another conference that may be of interest to those in computer science, 
+information technology, or otherwise computationally related fields. It has 
+been particularly pointed out, that also IS and other related fields are very 
+welcome.
+
+Last year the conference featured a "Geeks and Suits" event for career 
+planning contacts with the (related) industry. Additionally excellent New 
+Zealanders as key note speakers who have become internationally famous (Ian 
+Foster as the "godfather" of Grid Computing, Craig Neville-Manning from 
+Google, ...).
+
+It was definitely worth it, and I expect it to be good again.
+
+Guy
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+== Call for Papers ==
+
+We are now inviting submissions for full and short papers for the 6th
+New Zealand Computer Science Research Students Conference, to be held in
+April 2008 at the University of Canterbury.
+
+NZCSRSC 2008 is an opportunity for all Computer Science research
+students from around New Zealand to get together and learn more about
+cutting-edge research in different topics. Get your work known
+throughout the country and receive feedback from others engaged in the
+same area. Seize this chance of showcasing your research to the top
+Computer Science postgraduate students in New Zealand: submit your paper
+to NZCSRSC 2008.
+
+== Submission Details ==
+
+Submissions are now being accepted for:
+
+     * Full papers (with presentation) - not exceeding 8 pages
+     * Short papers (with poster) - not exceeding 4 pages
+
+The conference covers all fields of research in Computer Science and
+Software Engineering. See the NZCSRSC 2008 website for a comprehensive list.
+
+Each author who submits a paper will be required to participate in the
+review process. Each reviewer will be assigned three papers authored by
+his/her peers for blind-review.

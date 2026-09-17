@@ -1,0 +1,24 @@
+Return-Path: <"Postmark Security" <support@postmarkapp.com>>
+Delivered-To: team-member-16@enterprise.org
+Received: from mail.postmarkapp.com (mail.postmarkapp.com [198.51.100.26]) by mx.google.com with ESMTP id 7c94e4d0d224; Thu, 17 Sep 2026 05:16:32 +0000
+Received-SPF: pass (postmarkapp.com: domain designates 198.51.100.26 as permitted sender) client-ip=198.51.100.26;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=postmarkapp.com; dkim=pass header.i=@postmarkapp.com; dmarc=pass header.from=postmarkapp.com
+From: "Postmark Security" <support@postmarkapp.com>
+To: team-member-16@enterprise.org
+Subject: Outbound bounce rate reached 1.2% on transactional stream
+Date: Thu, 17 Sep 2026 05:16:32 +0000
+Message-ID: <3f35e198-91d2-44d8-96a1-385e8d59b8e3@postmarkapp.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Official notification from Postmark.
+
+Outbound bounce rate reached 1.2% on transactional stream.
+
+This automated security communication was generated to protect your enterprise account.
+Please review your configuration or activity:
+https://account.postmarkapp.com/servers
+
+If you have questions, please reach out to our official verified support team.
+Postmark Customer Trust & Security.

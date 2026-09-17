@@ -1,0 +1,23 @@
+From: "FamPay Alerts" <support@service.famapp.in>
+To: <user@example.com>
+Subject: Your transaction statement is ready
+Date: Mon, 07 Sep 2026 12:00:00 +0000
+Message-ID: <tx-confirm-20260907@service.famapp.in>
+Return-Path: <bounce@support.service.famapp.in>
+Received: from mail.service.famapp.in (mail.service.famapp.in [1.2.3.4])
+    by mx.google.com with ESMTP id ABC123XYZ
+    for <user@example.com>; Mon, 07 Sep 2026 12:00:01 +0000
+Authentication-Results: mx.google.com;
+    spf=pass (google.com: domain of bounce@support.service.famapp.in designates 1.2.3.4 as permitted sender) smtp.mailfrom=bounce@support.service.famapp.in;
+    dkim=pass (signature verified) header.i=@service.famapp.in header.s=s1;
+    dmarc=pass (p=reject) header.from=service.famapp.in
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=service.famapp.in; s=s1;
+    h=From:To:Subject:Date:Message-ID; bh=dummybh; b=dummysig
+
+Dear User,
+
+Your transaction confirmation statement is ready for viewing.
+You can review account activity anytime by visiting our help center at https://support.famapp.in or through the mobile app.
+
+Regards,
+FamApp Support Team

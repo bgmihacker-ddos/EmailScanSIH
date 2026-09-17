@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   SENTINEL SOC DESIGN TOKENS
+   Depth model: deck (page) > surface (panel) > raised (card);
+   sunken carves below deck for code, table headers, wells.
+   Color carries status only. One interactive accent.
+   ============================================================ */
+@layer base {
+  :root {
+    /* Depth layers */
+    --deck: #0A0D13;
+    --surface: #0F131B;
+    --raised: #151A25;
+    --sunken: #07090E;
+
+    /* Structure */
+    --hairline: rgba(255, 255, 255, 0.06);
+    --hairline-strong: rgba(255, 255, 255, 0.12);
+    --ink: #E9EDF4;
+    --ink-dim: #A6B0C2;
+    --ink-mute: #6B7689;
+    --ink-faint: #454F60;
+
+    /* Single interactive accent */
+    --accent: #4C9EEB;
+    --accent-soft: rgba(76, 158, 235, 0.14);
+
+    /* Severity language — status only */
+    --alert-critical: #F4586B;
+    --alert-high: #F0794A;
+    --alert-medium: #E8B44A;
+    --alert-low: #4C9EEB;
+    --alert-safe: #3ECF8E;
+
+    /* Typography */
+    --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Fira Code', monospace;
+
+    /* Spacing rhythm */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+
+    /* Radius — tight, instrument-like */
+    --radius-sm: 3px;
+    --radius-md: 5px;
+    --radius-lg: 7px;
+    --radius-xl: 10px;
+  }
+
+  html {
+    background: var(--deck);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    background: var(--deck);
+    color: var(--ink-dim);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Custom scrollbar — near-invisible until needed */
+  * { scrollbar-width: thin; scrollbar-color: #1E2532 var(--deck); }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #1E2532; border-radius: 999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #2A3344; }
+
+  ::selection { background: rgba(76, 158, 235, 0.28); color: #F2F7FD; }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+/* ============================================================
+   COMPONENT CLASSES
+   ============================================================ */
+@layer components {
+  /* Primary container — surface sits one layer above deck */
+  .soc-panel {
+    @apply rounded-lg border bg-surface;
+    border-color: var(--hairline);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+  }
+
+  .soc-panel-elevated {
+    @apply rounded-lg border bg-raised;
+    border-color: var(--hairline-strong);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.04),
+      0 8px 24px rgba(2, 6, 12, 0.35);
+  }
+
+  /* Section labels — quiet, mono, wide-tracked */
+  .soc-label {
+    @apply font-mono text-[10px] font-semibold uppercase tracking-[0.16em];
+    color: var(--ink-mute);
+  }
+
+  .report-kicker {
+    @apply font-mono text-[10px] font-semibold uppercase tracking-[0.16em];
+    color: var(--ink-mute);
+  }
+
+  /* Technical/monospace data */
+  .font-tech {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Evidence chips — severity-tinted, never decorative */
+  .evidence-chip {
+    @apply inline-flex items-center gap-1.5 rounded border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider;
+  }
+
+  .evidence-chip-high   { @apply bg-sunken font-semibold; border-color: rgba(244, 88, 107, 0.3);  color: var(--alert-critical); }
+  .evidence-chip-medium { @apply bg-sunken font-semibold; border-color: rgba(232, 180, 74, 0.3);  color: var(--alert-medium); }
+  .evidence-chip-low    { @apply bg-sunken font-semibold; border-color: rgba(76, 158, 235, 0.3);  color: var(--alert-low); }
+  .evidence-chip-info   { @apply bg-sunken font-semibold; border-color: rgba(62, 207, 142, 0.3);  color: var(--alert-safe); }
+
+  /* Severity badges — the color language of the platform */
+  .severity-critical { @apply bg-sunken font-semibold; border-color: rgba(244, 88, 107, 0.35); color: var(--alert-critical); }
+  .severity-high     { @apply bg-sunken font-semibold; border-color: rgba(240, 121, 74, 0.35); color: var(--alert-high); }
+  .severity-medium   { @apply bg-sunken font-semibold; border-color: rgba(232, 180, 74, 0.35); color: var(--alert-medium); }
+  .severity-low      { @apply bg-sunken font-semibold; border-color: rgba(76, 158, 235, 0.35); color: var(--alert-low); }
+  .severity-safe     { @apply bg-sunken font-semibold; border-color: rgba(62, 207, 142, 0.35); color: var(--alert-safe); }
+
+  /* Verdict badges — slightly stronger fills; these ARE the call to attention */
+  .verdict-malicious  { @apply bg-sunken font-semibold; border-color: rgba(244, 88, 107, 0.5);  color: #FF8B98; }
+  .verdict-suspicious { @apply bg-sunken font-semibold; border-color: rgba(232, 180, 74, 0.5);  color: #F5CE7E; }
+  .verdict-benign     { @apply bg-sunken font-semibold; border-color: rgba(62, 207, 142, 0.5);  color: #6FE3AC; }
+  .verdict-unknown    { @apply bg-sunken font-semibold; border-color: var(--hairline-strong);  color: var(--ink-dim); }
+
+  /* Metric card — raised with a quiet inner highlight */
+  .metric-card {
+    @apply rounded-lg border bg-raised p-4 transition-colors;
+    border-color: var(--hairline);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  }
+  .metric-card:hover { border-color: var(--hairline-strong); }
+
+  /* Dense professional tables */
+  .soc-table {
+    @apply w-full text-left text-xs;
+  }
+  .soc-table th {
+    @apply border-b px-4 py-2.5 font-mono text-[10px] font-semibold uppercase tracking-[0.14em];
+    color: var(--ink-mute);
+    background: var(--sunken);
+    border-color: var(--hairline);
+  }
+  .soc-table td {
+    @apply border-b px-4 py-3;
+    border-color: var(--hairline);
+  }
+  .soc-table tbody tr {
+    @apply transition-colors hover:bg-raised;
+  }
+
+  /* Inputs — carved into the surface */
+  .soc-input {
+    @apply w-full rounded-md border px-3 py-2 text-sm text-ink focus:outline-none;
+    background: var(--sunken);
+    border-color: var(--hairline-strong);
+  }
+  .soc-input:focus { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent-soft); }
+  .soc-input::placeholder { color: var(--ink-faint); }
+
+  .soc-select {
+    @apply rounded-md border px-3 py-2 text-sm focus:outline-none;
+    color: var(--ink-dim);
+    background: var(--sunken);
+    border-color: var(--hairline-strong);
+  }
+  .soc-select:focus { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent-soft); }
+
+  .soc-checkbox {
+    @apply h-4 w-4 rounded border;
+    background: var(--sunken);
+    border-color: var(--hairline-strong);
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.1em] transition-all focus:outline-none;
+    background: var(--accent);
+    color: #071018;
+  }
+  .btn-primary:hover { filter: brightness(1.12); }
+  .btn-primary:focus { box-shadow: 0 0 0 2px var(--accent-soft); }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border px-3 py-2 text-xs font-medium transition-colors;
+    border-color: var(--hairline-strong);
+    color: var(--ink-dim);
+    background: transparent;
+  }
+  .btn-secondary:hover { border-color: rgba(76, 158, 235, 0.5); color: var(--accent); }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border px-3 py-2 text-xs font-medium transition-colors;
+    border-color: rgba(244, 88, 107, 0.35);
+    color: #FF8B98;
+    background: rgba(244, 88, 107, 0.08);
+  }
+  .btn-danger:hover { background: rgba(244, 88, 107, 0.16); }
+
+  /* Skeleton loader */
+  .skeleton {
+    @apply animate-pulse rounded;
+    background: #131926;
+  }
+
+  /* Empty state */
+  .empty-state {
+    @apply flex flex-col items-center justify-center p-12 text-center;
+  }
+  .empty-state-icon {
+    @apply mb-4;
+    color: var(--ink-faint);
+  }
+  .empty-state-title {
+    @apply mb-2 text-sm font-medium;
+    color: var(--ink-dim);
+  }
+  .empty-state-text {
+    @apply font-mono text-xs;
+    color: var(--ink-mute);
+  }
+}
+
+/* ============================================================
+   UTILITY ANIMATIONS — functional state signals only
+   ============================================================ */
+@layer utilities {
+  .animate-pulse-slow { animation: pulse-slow 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+  @keyframes pulse-slow { 50% { opacity: .45; } }
+
+  /* Threat-level breathing glow (signature rail) */
+  .animate-posture {
+    animation: posture-breathe 3.2s ease-in-out infinite;
+  }
+  @keyframes posture-breathe {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+
+  .animate-telemetry {
+    animation: telemetry-pulse 3s ease-in-out infinite;
+  }
+  @keyframes telemetry-pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+
+  .animate-scanline {
+    animation: scanline 4s linear infinite;
+  }
+  @keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
+
+  .animate-dataflow {
+    animation: dataflow 2s ease-in-out infinite;
+  }
+  @keyframes dataflow {
+    0%, 100% { opacity: 0.2; transform: translateX(0); }
+    50% { opacity: 0.4; transform: translateX(10px); }
+  }
+
+  .animate-gridpulse {
+    animation: gridpulse 4s ease-in-out infinite;
+  }
+  @keyframes gridpulse {
+    0%, 100% { opacity: 0.03; }
+    50% { opacity: 0.06; }
+  }
+
+  /* Live feed dot — single ping then settle */
+  .animate-live-dot { animation: live-dot 1.8s cubic-bezier(0, 0, 0.2, 1) infinite; }
+  @keyframes live-dot {
+    0% { box-shadow: 0 0 0 0 currentColor; opacity: 1; }
+    70% { box-shadow: 0 0 0 6px transparent; opacity: 1; }
+    100% { box-shadow: 0 0 0 0 transparent; opacity: 1; }
+  }
+}
+
+/* ============================================================
+   AMBIENT DEPTH BACKGROUND — CSS-only layered field
+   ============================================================ */
+.bg-security-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.016) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.016) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-telemetry {
+  position: relative;
+}
+
+.bg-telemetry::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 45% at 18% 0%, rgba(76, 158, 235, 0.045) 0%, transparent 100%),
+    radial-gradient(ellipse 50% 40% at 88% 12%, rgba(76, 158, 235, 0.02) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Chart tooltip — shared by recharts across pages */
+.chart-tooltip {
+  background: var(--raised) !important;
+  border: 1px solid var(--hairline-strong) !important;
+  border-radius: 5px !important;
+  color: var(--ink) !important;
+  font-size: 11px !important;
+  font-family: var(--font-mono) !important;
+  box-shadow: 0 8px 24px rgba(2, 6, 12, 0.4) !important;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

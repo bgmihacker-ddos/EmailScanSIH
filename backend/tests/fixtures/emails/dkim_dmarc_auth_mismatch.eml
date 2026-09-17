@@ -1,0 +1,33 @@
+From: "Official Support" <support@trustedbank.com>
+To: "Customer" <client@sample.org>
+Subject: Important: Update your online banking security questions
+Date: Mon, 07 Sep 2026 16:00:00 +0000
+Message-ID: <tb-auth-mismatch-20260907@trustedbank.com>
+Return-Path: <bounce@unrelated-third-party.net>
+Reply-To: <support@trustedbank.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Received: from mx.sample.org (mx.sample.org [192.0.2.110])
+    by mail.sample.org with ESMTPS id U7T6R5
+    for <client@sample.org>; Mon, 07 Sep 2026 16:00:05 +0000
+Received: from relay.unrelated-third-party.net (relay.unrelated-third-party.net [198.51.100.177])
+    by mx.sample.org with ESMTP id I8O9P0
+    for <client@sample.org>; Mon, 07 Sep 2026 16:00:01 +0000
+Authentication-Results: mx.sample.org;
+    spf=fail (trustedbank.com: IP 198.51.100.177 is not authorized) smtp.mailfrom=bounce@unrelated-third-party.net;
+    dkim=pass (header.d=unrelated-third-party.net header.i=@unrelated-third-party.net header.s=default);
+    dmarc=fail (p=reject sp=reject dkim=unaligned spf=unaligned) header.from=trustedbank.com
+Received-SPF: fail
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=unrelated-third-party.net;
+    s=default; t=1725724800;
+    h=from:to:subject:date:message-id:mime-version:content-type;
+    bh=q1w2e3r4t5y6u7i8o9p0=;
+    b=dW5hbGlnbmVkX2RraW1fc2lnbmF0dXJlX2V4YW1wbGU=
+
+Dear Customer,
+
+We noticed that your security questions on TrustedBank have not been refreshed in over 12 months.
+Please log in to your account to review and update your security profile.
+
+Thank you,
+TrustedBank Support

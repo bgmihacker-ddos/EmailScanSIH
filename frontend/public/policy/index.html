@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy policy for Email Threat Detection, including Google sign-in, Gmail read-only access, email analysis, storage, retention, and user choices.">
+  <meta name="theme-color" content="#071315">
+  <title>Privacy Policy | Email Threat Detection</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #071315; color: #d6e1de; }
+    body { margin: 0; background: #071315; }
+    main { max-width: 860px; margin: 0 auto; padding: 32px 20px 64px; }
+    header, footer { border-color: #29454b; border-style: solid; border-width: 0 0 1px; padding: 0 0 20px; }
+    footer { border-width: 1px 0 0; padding: 24px 0 0; margin-top: 40px; color: #718581; font-size: 14px; }
+    a { color: #58d6c0; }
+    h1 { color: #fff; font-size: clamp(2rem, 6vw, 4rem); line-height: 1.05; margin: 48px 0 20px; }
+    h2 { color: #fff; margin-top: 36px; }
+    p, li { color: #9aadaa; line-height: 1.8; }
+    .eyebrow { color: #58d6c0; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .date { color: #718581; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+<main>
+  <header><a href="/">Email Threat Detection</a></header>
+  <p class="eyebrow">Privacy policy</p>
+  <h1>Your data, handled for analysis.</h1>
+  <p>This privacy policy explains what Email Threat Detection collects, how it is used, where it is stored, how Google sign-in and Gmail read-only access work, and what choices are available to you.</p>
+  <p class="date">Effective date: September 13, 2026 · Last reviewed: September 13, 2026</p>
+
+  <h2>1. Who operates the service</h2>
+  <p>Email Threat Detection is a defensive email-forensics and threat-intelligence application operated for authorized security analysis and SIH demonstration purposes. The service is intended for users who have permission to process the messages, accounts, attachments, and indicators they submit.</p>
+
+  <h2>2. Information we collect</h2>
+  <p>When you register with an email address and password, we collect your name, email address, password hash, account role, account status, and account timestamps. We do not store your plaintext password.</p>
+  <p>When you sign in with Google, we may receive your name, email address, Google account identifier, profile information made available by Google, and account verification status. Google authentication is optional.</p>
+  <p>When you connect Gmail, we may receive message identifiers, thread identifiers, message headers, message bodies, attachments, labels, and timestamps for messages you explicitly import or submit for analysis. The requested Gmail access is read-only. We do not send, edit, delete, or modify Gmail messages.</p>
+  <p>When you submit an email for analysis, we process its raw MIME source, headers, sender and recipient addresses, subject, body text, HTML, attachments, URLs, domains, IP addresses, file hashes, authentication results, and derived security findings.</p>
+  <p>We also collect operational data such as audit events, analysis identifiers, request status, error status, provider status, evidence hashes, blockchain transaction metadata when enabled, and basic service logs.</p>
+
+  <h2>3. How we use information</h2>
+  <ul>
+    <li>Authenticate users and enforce role-based access.</li>
+    <li>Parse and analyze email headers, authentication signals, content, URLs, domains, attachments, and indicators of compromise.</li>
+    <li>Enrich indicators with configured threat-intelligence, DNS, WHOIS, geolocation, and reputation providers.</li>
+    <li>Generate risk scores, explanations, MITRE ATT&amp;CK mappings, case records, reports, CERT-In incident exports, and response artifacts.</li>
+    <li>Maintain audit logs, investigate service errors, prevent abuse, and improve the reliability of the demonstration system.</li>
+    <li>Anchor an evidence hash on a configured blockchain network and provide a transaction verification link when blockchain integration is enabled.</li>
+  </ul>
+  <p>We do not sell personal information or use submitted email content for advertising. We do not use Gmail data to send messages or modify a mailbox.</p>
+
+  <h2>4. Google API and Gmail data</h2>
+  <p>Google sign-in and Gmail connection are separate optional features. Gmail data is used only for the user-requested inbox import and email-analysis functionality. Gmail data is not used for advertising, sold to third parties, or transferred to an unrelated service. Access can be revoked from your Google Account security settings. Revoking access prevents future imports but does not automatically delete analysis records already created.</p>
+
+  <h2>5. Sharing and service providers</h2>
+  <p>Submitted indicators may be sent to threat-intelligence or enrichment providers that are enabled in the deployment configuration, such as URL, IP, DNS, WHOIS, geolocation, or malware-intelligence services. Provider availability and configuration are shown as part of the analysis where supported. We do not send data to providers that are not configured.</p>
+  <p>Authorized administrators and service operators may access analysis records when needed for security operations, support, incident response, or system maintenance. We may disclose information when required by law or to protect the service and its users.</p>
+
+  <h2>6. Storage and security</h2>
+  <p>Account records, analysis results, evidence manifests, and audit events are stored in the configured application database. Authentication tokens and passwords are protected using the application security controls. Evidence hashes may be stored with blockchain transaction metadata when that feature is enabled. Data in transit should be protected with HTTPS in deployed environments.</p>
+  <p>No online service can guarantee absolute security. Do not submit information that you are not authorized to process, including confidential information belonging to another person or organization.</p>
+
+  <h2>7. Retention and deletion</h2>
+  <p>Account, analysis, case, audit, and derived evidence data may be retained while the account is active or as needed for security, compliance, troubleshooting, demonstration integrity, and legal obligations. Retention periods may vary by deployment configuration.</p>
+  <p>You may request account and associated data deletion from the service operator. Deletion may be limited where records must be retained for security, legal, audit, or evidence-integrity purposes. Blockchain records cannot be altered or deleted from the blockchain after confirmation.</p>
+
+  <h2>8. Your choices</h2>
+  <ul>
+    <li>Do not connect Google or Gmail if those features are not needed.</li>
+    <li>Revoke Gmail access through Google Account security settings.</li>
+    <li>Request correction or deletion of account information through the service operator.</li>
+    <li>Stop submitting messages and disconnect integrations at any time.</li>
+  </ul>
+
+  <h2>9. Contact</h2>
+  <p>For privacy, deletion, or data-access questions, contact the service operator through the support channel associated with your account. Include the relevant account email and analysis identifier when appropriate, but do not include passwords, access tokens, or private keys.</p>
+
+  <footer><a href="/">Homepage</a> · <a href="/login">Sign in</a> · <a href="/service">Terms of service</a></footer>
+</main>
+</body>
+</html>

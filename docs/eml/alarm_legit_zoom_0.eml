@@ -1,0 +1,24 @@
+Return-Path: <"Zoom Security" <no-reply@zoom.us>>
+Delivered-To: team-member-0@enterprise.org
+Received: from mail.zoom.us (mail.zoom.us [198.51.100.10]) by mx.google.com with ESMTP id b2cd5b7c302c; Fri, 11 Sep 2026 19:02:32 +0000
+Received-SPF: pass (zoom.us: domain designates 198.51.100.10 as permitted sender) client-ip=198.51.100.10;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=zoom.us; dkim=pass header.i=@zoom.us; dmarc=pass header.from=zoom.us
+From: "Zoom Security" <no-reply@zoom.us>
+To: team-member-0@enterprise.org
+Subject: Your scheduled cloud recording is ready for viewing
+Date: Fri, 11 Sep 2026 19:02:32 +0000
+Message-ID: <8afa2dfd-05cb-420f-a14e-7123344660cd@zoom.us>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Official notification from Zoom.
+
+Your scheduled cloud recording is ready for viewing.
+
+This automated security communication was generated to protect your enterprise account.
+Please review your configuration or activity:
+https://zoom.us/rec/share/8821094
+
+If you have questions, please reach out to our official verified support team.
+Zoom Customer Trust & Security.

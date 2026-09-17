@@ -1,0 +1,45 @@
+From: "Billing Dept" <billing@legitvendor.com>
+To: "Accounts Payable" <ap@client.org>
+Subject: Invoice INV-2026-9081 for Services Rendered
+Date: Mon, 07 Sep 2026 10:15:00 +0000
+Message-ID: <inv-20260907-9081@legitvendor.com>
+Return-Path: <billing@legitvendor.com>
+Reply-To: <billing@legitvendor.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="----=_Part_20260907_101500"
+Received: from mail.legitvendor.com (mail.legitvendor.com [198.51.100.25])
+    by mx.client.org (Postfix) with ESMTPS id C3D4E5F6
+    for <ap@client.org>; Mon, 07 Sep 2026 10:15:05 +0000
+Authentication-Results: mx.client.org;
+    spf=pass smtp.mailfrom=billing@legitvendor.com;
+    dkim=pass header.i=@legitvendor.com;
+    dmarc=pass action=none header.from=legitvendor.com
+Received-SPF: pass (legitvendor.com: domain designates 198.51.100.25 as permitted sender)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=legitvendor.com; s=billing2026;
+    h=from:to:subject:date:message-id:mime-version:content-type;
+    bh=x7lD2R09xZ9L1i6yS4G1=;
+    b=bGZWbnRfc2lnbmF0dXJlX2Jlmlnbg==
+
+------=_Part_20260907_101500
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Dear Client,
+
+Please find attached the routine monthly invoice for consulting services completed in August 2026.
+Payment terms are net 30 days as agreed.
+
+Thank you for your business.
+
+Sincerely,
+Billing Department
+Legit Vendor LLC
+
+------=_Part_20260907_101500
+Content-Type: application/pdf; name="invoice_2026_9081.pdf"
+Content-Disposition: attachment; filename="invoice_2026_9081.pdf"
+Content-Transfer-Encoding: base64
+
+JVBERi0xLjQKMSAwIG9iaiA8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKPj4KZW5kb2Jq
+Cg==
+------=_Part_20260907_101500--

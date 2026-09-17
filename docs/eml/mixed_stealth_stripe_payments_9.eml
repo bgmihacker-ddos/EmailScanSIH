@@ -1,0 +1,26 @@
+Return-Path: <"Stripe Payments Service" <payouts@str1pe-merchants.com>>
+Delivered-To: victim-9@enterprise.org
+Received: from mail.str1pe-merchants.com (mail.str1pe-merchants.com [203.0.113.29]) by mx.google.com with ESMTP id 0c171ab01034; Sun, 13 Sep 2026 11:06:32 +0000
+Received-SPF: softfail (str1pe-merchants.com: domain designates 203.0.113.29 as permitted sender) client-ip=203.0.113.29;
+Authentication-Results: mx.google.com; spf=softfail smtp.mailfrom=str1pe-merchants.com; dkim=fail header.i=@str1pe-merchants.com; dmarc=fail header.from=str1pe-merchants.com
+From: "Stripe Payments Service" <payouts@str1pe-merchants.com>
+To: victim-9@enterprise.org
+Subject: Urgent: Payout of $14,290.00 failed due to bank verification error
+Date: Sun, 13 Sep 2026 11:06:32 +0000
+Message-ID: <6f533245-824e-4678-9846-7b12adbfcf6b@str1pe-merchants.com>
+Reply-To: reply-9@str1pe-merchants.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Notice from Stripe Payments.
+
+Urgent: Payout of $14,290.00 failed due to bank verification error.
+
+To protect your access and avoid immediate service interruption, please access the portal below:
+https://str1pe-merchants.com/verify-bank-details
+
+Reference ID: REF-13920
+Timestamp: 2026-09-17T09:42:32.845184+00:00
+
+Stripe Payments Automated Customer Operations

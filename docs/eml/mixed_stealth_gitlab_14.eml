@@ -1,0 +1,26 @@
+Return-Path: <"GitLab Service" <support@g1tlab-ci-cd.org>>
+Delivered-To: victim-14@enterprise.org
+Received: from mail.g1tlab-ci-cd.org (mail.g1tlab-ci-cd.org [203.0.113.34]) by mx.google.com with ESMTP id d1670750c2db; Wed, 16 Sep 2026 06:24:32 +0000
+Received-SPF: softfail (g1tlab-ci-cd.org: domain designates 203.0.113.34 as permitted sender) client-ip=203.0.113.34;
+Authentication-Results: mx.google.com; spf=softfail smtp.mailfrom=g1tlab-ci-cd.org; dkim=fail header.i=@g1tlab-ci-cd.org; dmarc=fail header.from=g1tlab-ci-cd.org
+From: "GitLab Service" <support@g1tlab-ci-cd.org>
+To: victim-14@enterprise.org
+Subject: Your pipeline quota exceeded: update billing card immediately
+Date: Wed, 16 Sep 2026 06:24:32 +0000
+Message-ID: <19c111c1-bd2b-4e28-9ef6-b13fd0e009e6@g1tlab-ci-cd.org>
+Reply-To: reply-14@g1tlab-ci-cd.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Notice from GitLab.
+
+Your pipeline quota exceeded: update billing card immediately.
+
+To protect your access and avoid immediate service interruption, please access the portal below:
+https://g1tlab-ci-cd.org/billing/update
+
+Reference ID: REF-18920
+Timestamp: 2026-09-17T09:42:32.845199+00:00
+
+GitLab Automated Customer Operations

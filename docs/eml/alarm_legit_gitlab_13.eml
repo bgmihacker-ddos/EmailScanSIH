@@ -1,0 +1,24 @@
+Return-Path: <"GitLab Security" <gitlab@mg.gitlab.com>>
+Delivered-To: team-member-13@enterprise.org
+Received: from mail.gitlab.com (mail.gitlab.com [198.51.100.23]) by mx.google.com with ESMTP id 533861ea102d; Sun, 13 Sep 2026 01:25:32 +0000
+Received-SPF: pass (gitlab.com: domain designates 198.51.100.23 as permitted sender) client-ip=198.51.100.23;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=gitlab.com; dkim=pass header.i=@gitlab.com; dmarc=pass header.from=gitlab.com
+From: "GitLab Security" <gitlab@mg.gitlab.com>
+To: team-member-13@enterprise.org
+Subject: [GitLab] Two-factor authentication recovery codes generated
+Date: Sun, 13 Sep 2026 01:25:32 +0000
+Message-ID: <218ee1b8-7ba4-49f9-83f6-76e79ed2b484@gitlab.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Official notification from GitLab.
+
+[GitLab] Two-factor authentication recovery codes generated.
+
+This automated security communication was generated to protect your enterprise account.
+Please review your configuration or activity:
+https://gitlab.com/-/profile/two_factor_auth
+
+If you have questions, please reach out to our official verified support team.
+GitLab Customer Trust & Security.

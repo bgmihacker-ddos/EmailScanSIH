@@ -1,0 +1,15 @@
+Return-Path: <monkey.org <HELPDESK@monkey.org>>
+Delivered-To: employee@enterprise.org
+Received: from mail.monkey.org (mail.monkey.org [209.85.220.41]) by mx.google.com with ESMTP id f4618d0c980e; Tue, 15 Sep 2026 01:50:32 +0000
+Received-SPF: softfail (monkey.org: domain designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com; spf=softfail smtp.mailfrom=monkey.org; dkim=fail header.i=@monkey.org; dmarc=fail header.from=monkey.org
+From: monkey.org <HELPDESK@monkey.org>
+To: employee@enterprise.org
+Subject: Rectify Your Password With monkey.org
+Date: Tue, 15 Sep 2026 01:50:32 +0000
+Message-ID: <28c8b933-dca3-42bf-b4e9-01194e5878fa@monkey.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+monkey.org  Hi jose,Pa⁠s⁠sword for⁠ jose@monkey.org⁠ Will Expire T⁠od⁠ayu⁠se cu⁠rren⁠t pa⁠ssword to continue for jose@monkey.org Ke⁠e⁠p Sa⁠me⁠ Pa⁠ss⁠wor⁠d⁠

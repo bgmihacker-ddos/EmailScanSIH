@@ -1,0 +1,24 @@
+Return-Path: <"Spotify Security" <no-reply@spotify.com>>
+Delivered-To: team-member-7@enterprise.org
+Received: from mail.spotify.com (mail.spotify.com [198.51.100.17]) by mx.google.com with ESMTP id 12775041e64a; Fri, 11 Sep 2026 11:17:32 +0000
+Received-SPF: pass (spotify.com: domain designates 198.51.100.17 as permitted sender) client-ip=198.51.100.17;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=spotify.com; dkim=pass header.i=@spotify.com; dmarc=pass header.from=spotify.com
+From: "Spotify Security" <no-reply@spotify.com>
+To: team-member-7@enterprise.org
+Subject: Your receipt for Spotify Premium Family plan
+Date: Fri, 11 Sep 2026 11:17:32 +0000
+Message-ID: <a379f938-5e9f-4e36-9fae-51175f45aa6f@spotify.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Official notification from Spotify.
+
+Your receipt for Spotify Premium Family plan.
+
+This automated security communication was generated to protect your enterprise account.
+Please review your configuration or activity:
+https://www.spotify.com/account/subscription
+
+If you have questions, please reach out to our official verified support team.
+Spotify Customer Trust & Security.

@@ -1,0 +1,18 @@
+
+{
+  "rewrites": [
+    {
+      "source": "/architecture",
+      "destination": "/architecture.html"
+    },
+    {
+      "source": "/policy",
+      "destination": "/policy/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+

@@ -1,0 +1,26 @@
+Return-Path: <"Slack" <feedback@slack.com>>
+Delivered-To: colleague@enterprise.org
+Received: from mail.slack.com (mail.slack.com [54.240.35.4]) by mx.google.com with ESMTP id 87f8560ac56e; Tue, 15 Sep 2026 19:26:32 +0000
+Received-SPF: pass (slack.com: domain designates 54.240.35.4 as permitted sender) client-ip=54.240.35.4;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=slack.com; dkim=pass header.i=@slack.com; dmarc=pass header.from=slack.com
+From: "Slack" <feedback@slack.com>
+To: colleague@enterprise.org
+Subject: New sign-in to Slack from Safari on iOS
+Date: Tue, 15 Sep 2026 19:26:32 +0000
+Message-ID: <0e5abd76-20f1-432c-992c-5c78323680ad@slack.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Your Slack account was recently signed in to from a new device:
+
+Device: Safari on iOS 18
+Location: London, United Kingdom
+IP: 82.165.197.1
+
+If this was you, you're all set! No action is needed.
+If this wasn't you, we strongly recommend signing out of all sessions and resetting your password:
+https://slack.com/account/settings
+
+Stay safe,
+The team at Slack

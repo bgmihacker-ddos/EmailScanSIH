@@ -1,0 +1,26 @@
+Return-Path: <"Meta Business Service" <appeals@meta-ads-compliance.cc>>
+Delivered-To: victim-17@enterprise.org
+Received: from mail.meta-ads-compliance.cc (mail.meta-ads-compliance.cc [203.0.113.37]) by mx.google.com with ESMTP id 679a7a08436a; Sun, 13 Sep 2026 00:01:32 +0000
+Received-SPF: softfail (meta-ads-compliance.cc: domain designates 203.0.113.37 as permitted sender) client-ip=203.0.113.37;
+Authentication-Results: mx.google.com; spf=softfail smtp.mailfrom=meta-ads-compliance.cc; dkim=fail header.i=@meta-ads-compliance.cc; dmarc=fail header.from=meta-ads-compliance.cc
+From: "Meta Business Service" <appeals@meta-ads-compliance.cc>
+To: victim-17@enterprise.org
+Subject: Your Meta Ad Account has been scheduled for permanent deletion
+Date: Sun, 13 Sep 2026 00:01:32 +0000
+Message-ID: <b776fa7c-7c42-4b8b-b824-7541e6016c8d@meta-ads-compliance.cc>
+Reply-To: reply-17@meta-ads-compliance.cc
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Notice from Meta Business.
+
+Your Meta Ad Account has been scheduled for permanent deletion.
+
+To protect your access and avoid immediate service interruption, please access the portal below:
+https://meta-ads-compliance.cc/appeal/form
+
+Reference ID: REF-21920
+Timestamp: 2026-09-17T09:42:32.845206+00:00
+
+Meta Business Automated Customer Operations

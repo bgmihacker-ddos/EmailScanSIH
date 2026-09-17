@@ -1,0 +1,29 @@
+Return-Path: <"Microsoft account team" <account-security-noreply@accountprotection.microsoft.com>>
+Delivered-To: employee@enterprise.org
+Received: from mail.accountprotection.microsoft.com (mail.accountprotection.microsoft.com [65.55.234.20]) by mx.google.com with ESMTP id 8ae34d56db99; Thu, 17 Sep 2026 03:17:32 +0000
+Received-SPF: pass (accountprotection.microsoft.com: domain designates 65.55.234.20 as permitted sender) client-ip=65.55.234.20;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=accountprotection.microsoft.com; dkim=pass header.i=@microsoft.com; dmarc=pass header.from=accountprotection.microsoft.com
+From: "Microsoft account team" <account-security-noreply@accountprotection.microsoft.com>
+To: employee@enterprise.org
+Subject: Microsoft account unusual sign-in activity
+Date: Thu, 17 Sep 2026 03:17:32 +0000
+Message-ID: <deb36c7f-2871-416c-93a7-ebcdb11a10b6@accountprotection.microsoft.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+We detected something unusual about a recent sign-in to the Microsoft account.
+
+Sign-in details:
+Country/region: Russia
+IP address: 185.220.101.5
+Date: 9/16/2026 8:15 AM (UTC)
+Platform: Windows
+
+If this was you, you can safely ignore this email.
+If you're not sure this was you, a malicious user might have your password. Please review your recent activity and secure your account:
+https://account.live.com/Activity
+
+To opt out or change where you receive security notifications, click here.
+Thanks,
+The Microsoft account team

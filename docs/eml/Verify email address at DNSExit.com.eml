@@ -1,0 +1,81 @@
+Delivered-To: nandpatel0912@gmail.com
+Received: by 2002:a05:7412:100c:b0:1ed:ff44:6607 with SMTP id h12csp2421084rdc;
+        Sun, 13 Sep 2026 03:18:13 -0700 (PDT)
+X-Received: by 2002:a05:6000:4541:b0:47f:9254:d453 with SMTP id ffacd0b85a97d-486eb2db733mr20281945f8f.8.1789294693451;
+        Sun, 13 Sep 2026 03:18:13 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1789294693; cv=none;
+        d=google.com; s=arc-20260327;
+        b=sJGEmWJI3c5gDwW0qrjibxpuSCVREPimFIejFewEr/6dmzDaQNCuC2uxVlEafibXvV
+         0BzoKJvz/d1iqqYOxIf/oBs39bVUAvdpIw6CWjqqBelDA0GYVUs12JPWiod5fTE1mB2z
+         yoJV2nN7ddJo3jvStiL3E/Eq8fnd1m8WI8u14wATc1BRlizOdOITtXDbFxPXvbG338FU
+         HD7r6psMm2jsSejeLhic2NoIg1ra7Ou4S8Tbh/BfKJB6HmTHV7+cNzK7J/iLTs2uRHVm
+         QluzdEG+WMwOYe3W3Joua7Ko3vF5eis765WO/KMsIkJECLU1NnjBS3WC2n7pgweEsA67
+         RyKQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=content-transfer-encoding:mime-version:subject:to:from:date
+         :message-id:dkim-signature:dkim-filter;
+        bh=8miStQnKw2mjh8Mp5T7nRdkhVQtfAxYUguXiD17cnL8=;
+        fh=sY8DZJzACXvs7N1Fvicr31Rtzkn9EIZqFsiymgVn8tE=;
+        b=NoVM8Fthxa4SOAbQ7T7h22WMHTZ7kej29QLdxaiuwK8beeDJyfwzNUd35FKkZDrUXb
+         MFdFO+vp+O5bHEeWVt7yZmwOEHwFPn1TUU83RunEmxop7itOohTa+DQJMgxqGSSQS6tN
+         Pfob1iEj+/93iJ46+GnLl/Jx7ZxbW0zIguggzMX792lgBiXTWTCtcUBHxOzMbCqbD1XN
+         lvn0R1rNDobYZsV+KeAlJ33w2x7csXvh0nrYtGDRcasU4ZGm91htaXKNukLlHaXVwAR5
+         dCoWoIr1PHjNVxtIqXOwwAmABgRR+zu/j2Bs1WKlJBwZ8OY5UTkLV21fIt+5QN/L/Wcd
+         HW+Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@dns-exit.com header.s=relay header.b="D3zxiXL/";
+       spf=pass (google.com: domain of support@dns-exit.com designates 184.164.135.5 as permitted sender) smtp.mailfrom=support@dns-exit.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=dns-exit.com
+Return-Path: <support@dns-exit.com>
+Received: from ph7.wisevps.com (ph7.wisevps.com. [184.164.135.5])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-486eb36cae8si14127144f8f.71.2026.09.13.03.18.12
+        for <nandpatel0912@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 13 Sep 2026 03:18:13 -0700 (PDT)
+Received-SPF: pass (google.com: domain of support@dns-exit.com designates 184.164.135.5 as permitted sender) client-ip=184.164.135.5;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@dns-exit.com header.s=relay header.b="D3zxiXL/";
+       spf=pass (google.com: domain of support@dns-exit.com designates 184.164.135.5 as permitted sender) smtp.mailfrom=support@dns-exit.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=dns-exit.com
+Received: from ph7.wisevps.com (localhost [127.0.0.1])
+	by ph7.wisevps.com with ESMTP id 7018F1404E08B.1789294690.4342;
+	Sun, 13 Sep 2026 06:18:11 -0400
+X-Relay-Job: 7018F1404E08B.1789294690.4342
+X-Relay-AuthID: dnsexitwebrelay
+X-Relay-Server: ph7.wisevps.com
+Received: from wwwvps (wwwvps [64.182.209.150])
+	by gw1.dnsexit.com (Postfix) with ESMTP id 7018F1404E08B
+	for <nandpatel0912@gmail.com>; Sun, 13 Sep 2026 06:18:10 -0400 (EDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 gw1.dnsexit.com 7018F1404E08B
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dns-exit.com;
+	s=relay; t=1789294690;
+	bh=8miStQnKw2mjh8Mp5T7nRdkhVQtfAxYUguXiD17cnL8=;
+	h=Date:From:To:Subject:From;
+	b=D3zxiXL/lL834DmBo1H+yoyhMwKgJCmZGBLS7n50BPKuCUAEwBVPKwNLMTOI5rHNP
+	 FWy8DRJlhHDY+mKGM6cm/QlkbLHlb12uZ6HyAC2MLl06/F8QuY26XAkMF+jQvLA9IX
+	 GqlZxd+UjSlge5ASRoPNkZFQbncMZw1h2c2KjaW0=
+Message-ID: <97873943.1789294690449.JavaMail.root@wwwvps>
+Date: Sun, 13 Sep 2026 06:18:10 -0400 (EDT)
+From: support@dns-exit.com
+To: nandpatel0912@gmail.com
+Subject: Verify email address at DNSExit.com
+Mime-Version: 1.0
+Content-Type: text/plain;charset=utf8
+Content-Transfer-Encoding: 7bit
+
+
+Dear Nand patel,
+
+You just either registered your account nandpatel0912@gmail.com or changed your e-email address at DNSExit.com. The purpose of this email is to confirm that have access to nandpatel0912@gmail.com. 
+
+Please click the link below to complete the verification process:
+
+ https://DNSExit.Com/Direct.sv?cmd=verify&login=nandpatel0912@gmail.com&code=4921
+
+Alternatively, you can enter the verification code below to your account verification page:
+ 
+ E-Mail Verification Code: 4921
+
+Thanks for your cooperation.
+DNSExit.com

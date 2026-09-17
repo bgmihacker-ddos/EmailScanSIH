@@ -1,0 +1,24 @@
+Return-Path: <"LinkedIn Security" <security-noreply@linkedin.com>>
+Delivered-To: team-member-3@enterprise.org
+Received: from mail.linkedin.com (mail.linkedin.com [198.51.100.13]) by mx.google.com with ESMTP id c325e6399160; Tue, 15 Sep 2026 23:06:32 +0000
+Received-SPF: pass (linkedin.com: domain designates 198.51.100.13 as permitted sender) client-ip=198.51.100.13;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=linkedin.com; dkim=pass header.i=@linkedin.com; dmarc=pass header.from=linkedin.com
+From: "LinkedIn Security" <security-noreply@linkedin.com>
+To: team-member-3@enterprise.org
+Subject: Your LinkedIn password was changed successfully
+Date: Tue, 15 Sep 2026 23:06:32 +0000
+Message-ID: <44de4eb8-c272-4946-a250-f6711f0e256e@linkedin.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Official notification from LinkedIn.
+
+Your LinkedIn password was changed successfully.
+
+This automated security communication was generated to protect your enterprise account.
+Please review your configuration or activity:
+https://www.linkedin.com/psettings/security
+
+If you have questions, please reach out to our official verified support team.
+LinkedIn Customer Trust & Security.

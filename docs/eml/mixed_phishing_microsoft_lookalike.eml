@@ -1,0 +1,57 @@
+Delivered-To: victim@company.com
+Received: by 2002:a05:6512:445:b0:4f5:d08a:2603 with SMTP id u5csp492106lfy;
+        Wed, 17 Sep 2026 04:15:22 -0700 (PDT)
+Return-Path: <no-reply@micros0ft-support.com>
+Received: from mail.micros0ft-support.com (mail.micros0ft-support.com. [198.51.100.44])
+        by mx.google.com with ESMTP id q12si2841029plk.31.2026.09.17.04.15.21
+        for <victim@company.com>;
+        Wed, 17 Sep 2026 04:15:22 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning no-reply@micros0ft-support.com does not designate 198.51.100.44 as permitted sender) client-ip=198.51.100.44;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning no-reply@micros0ft-support.com does not designate 198.51.100.44 as permitted sender) smtp.mailfrom=no-reply@micros0ft-support.com;
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=micros0ft-support.com
+From: "Microsoft Security Operations" <no-reply@micros0ft-support.com>
+To: victim@company.com
+Subject: Notice: Security policy update requires Multi-Factor Authentication verification
+Date: Wed, 17 Sep 2026 11:15:20 +0000
+Message-ID: <MS-SEC-20260917-883921@micros0ft-support.com>
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f2f1; margin: 0; padding: 24px; color: #323130; }
+    .container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); overflow: hidden; }
+    .header { background: #0078d4; padding: 20px 24px; color: white; font-size: 18px; font-weight: 600; }
+    .content { padding: 24px; font-size: 14px; line-height: 1.6; }
+    .btn { display: inline-block; background-color: #0078d4; color: #ffffff !important; text-decoration: none; padding: 12px 28px; border-radius: 2px; font-weight: 600; margin: 20px 0; }
+    .footer { padding: 16px 24px; background: #f8f8f8; font-size: 12px; color: #605e5c; border-top: 1px solid #edebe9; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      Microsoft 365 Security Center
+    </div>
+    <div class="content">
+      <p>Hello Workplace User,</p>
+      <p>As part of our continuous commitment to enterprise security, Microsoft 365 has updated the organizational authentication policy for your tenant domain.</p>
+      <p>To ensure uninterrupted access to your enterprise services including Outlook, SharePoint, and Teams, please verify and renew your registered authenticator device before the deadline.</p>
+      <p style="text-align: center;">
+        <a href="https://login.micros0ft-support.com/oauth2/v2.0/authorize?client_id=enterprise-sso" class="btn">Verify Authentication Method</a>
+      </p>
+      <p>If you have questions regarding this organizational security update, please consult your internal enterprise administrator.</p>
+      <p>Reference Ticket ID: <strong>MSFT-SEC-992140</strong></p>
+    </div>
+    <div class="footer">
+      This is a mandatory service communication. Microsoft Corporation, One Microsoft Way, Redmond, WA 98052 USA.<br>
+      Privacy Statement | Terms of Service
+    </div>
+  </div>
+</body>
+</html>
+

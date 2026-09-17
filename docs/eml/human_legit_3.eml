@@ -1,0 +1,86 @@
+Return-Path: <Kevin Jacobson <wffjeanja@northtec.ac.nz>>
+Delivered-To: team@enterprise.org
+Received: from mail.northtec.ac.nz (mail.northtec.ac.nz [209.85.220.41]) by mx.google.com with ESMTP id ed4a0da0fa59; Sun, 13 Sep 2026 20:36:32 +0000
+Received-SPF: pass (northtec.ac.nz: domain designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=northtec.ac.nz; dkim=pass header.i=@northtec.ac.nz; dmarc=pass header.from=northtec.ac.nz
+From: Kevin Jacobson <wffjeanja@northtec.ac.nz>
+To: team@enterprise.org
+Subject: RE: NorthTec Account/Password
+Date: Sun, 13 Sep 2026 20:36:32 +0000
+Message-ID: <e347d022-827b-4081-8aad-065d7f363d2e@northtec.ac.nz>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Tony
+Not sure why it didn't work, but I manually set it to that from this end so you should be sweet to log in with that now.
+
+Regards,
+Kevin Jacobson
+
+ICT Services
+NorthTec - Tai Tokerau Wananga
+Private Bag 9019
+Whangarei, New Zealand
+
+DDI: 09 470 3777 - Ext: 3777
+FAX: 09 470 3883
+
+-----Original Message-----
+From: Tony Meyer [mailto:user2.1@gvc.ceas-challenge.cc]
+Sent: Thursday, November 29, 2007 2:01 PM
+To: Kevin Jacobson
+Subject: Re: NorthTec Account/Password
+
+This still doesn't work.
+
+The "not used before" can't be relevant here, because this is a
+completely new account.
+In case the initial setup was triggering the "previous 24 hours", I
+didn't do anything with it yesterday and tried today, so that can't be
+relevant.
+
+The password "ABcd23." is exactly 7 characters long, has a mixture of
+uppercase, lowercase, and symbols, doesn't include my name, and isn't
+accepted. (This isn't the password I would prefer to use, but it's an
+example of one that doesn't work, but matches what you said).
+
+The error I get is:
+
+"""
+The password supplied does not meet the minimum complexity
+requirements. Please try again.
+Your password has expired and must be changed. Please change your
+password now.
+"""
+
+It seems clear that the username must be correct, otherwise it
+wouldn't be telling me that it has expired.
+
+Any further suggestions?
+
+Thanks,
+Tony
+
+On 26/11/2007, at 10:38 AM, Kevin Jacobson wrote:
+
+> Ah, sorry Tony I should have thought of that
+> It must be 7 chars long, with a mixture of uppercase, lowercase and
+> number or symbols, only requires 3 of those four. It can't be
+> anything you've used before, nor can it include your name. It also
+> can't have been changed already in the previous 24 hours, but we
+> shouldn't have to worry about that one.
+>
+> Regards,
+> Kevin Jacobson
+>
+> ICT Services
+> NorthTec - Tai Tokerau Wananga
+> Private Bag 9019
+> Whangarei, New Zealand
+>
+> DDI: 09 470 3777 - Ext: 3777
+> FAX: 09 470 3883
+>
+> -----Original Message-----
+> From: Tony Meyer [mailto

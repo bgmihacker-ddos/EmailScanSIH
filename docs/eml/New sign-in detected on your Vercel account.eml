@@ -1,0 +1,581 @@
+Delivered-To: nandpatel0912@gmail.com
+Received: by 2002:a05:7412:100c:b0:1ed:ff44:6607 with SMTP id h12csp4873428rdc;
+        Tue, 15 Sep 2026 05:02:50 -0700 (PDT)
+X-Received: by 2002:a17:90b:3f4e:b0:396:6344:3b63 with SMTP id 98e67ed59e1d1-39e10ce07c7mr1322911a91.2.1789473770266;
+        Tue, 15 Sep 2026 05:02:50 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1789473770; cv=none;
+        d=google.com; s=arc-20260327;
+        b=TiZnp16fozrsHdI9awejKHfN9bwyaupg6YC/izYtVTxRDX9t5VDmibGPu4nO5H3pa6
+         jLeq0HZI4aTzrIrD9BSwCPOMVCZ9dAYEiLfqjkYEO8iDcuaMM3XuqrOmupIbrbgmMwmP
+         jIHcqSnypP6OH4hCyfmRTSl7EFpylNDCPazKxs1bpJIBUkBavnd6sbG3VeB1PW2TKGZn
+         chALTVqZPgMpOAFy+mQgLIvhKWhkp6qBgHjIcMVgIv8uZ9biK3d7ZX1IzUsv1+RioAoe
+         hTerbPAUyWQSkcoeA2CgX9GsT/U3ujrkiUIhqdgFe1tjHoQHq6MBXaxlLQTjAYTunTas
+         l7Sg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=feedback-id:date:message-id:mime-version:subject:to:reply-to:from
+         :dkim-signature:dkim-signature;
+        bh=G1yHqZC6x2iujgOY05ifNNa2WSGEqGX5bfRXUwyKgx8=;
+        fh=sY8DZJzACXvs7N1Fvicr31Rtzkn9EIZqFsiymgVn8tE=;
+        b=BiLRfUyEI6aShOObWMDX3oKJOPr/b80n6CUiA7klDJs5VyQjoUGOpxU0LpWgjnl0vt
+         5ZHdopwoPmQs79m6S3qMNuvrCVdUEdwzKaOWFFkB/8j0PwwKoJtJWvgsl856Whew5FW1
+         o4DKYIj8A+NVCQYxlVUcVg7fGQYU0OyozH7CVgE3anXHKXcqCtjkZgQVraCFjZE84BDf
+         oNgHAQGb0BqpEEYR6YqypPdTDNNviYlGgia0Jc645NKnOgQz3uiBJZjUMF1bWzIe9Qz3
+         48ynkf5ZEJ+ZPPsFb0Kgf2AiW49lCf0k4Wo/9RJpOJhSu3IZJSXB9ZCCbAh/4S13QfhI
+         eURQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@vercel.com header.s=xrxz75cdd7hqmueggvr2yk4ulqxz34zd header.b=ZYT+ZKu9;
+       dkim=pass header.i=@amazonses.com header.s=hsbnp7p3ensaochzwyq5wwmceodymuwv header.b=k7Da31Hh;
+       spf=pass (google.com: domain of 010101a0a4f2c781-9741a178-6cea-405d-9758-c256caaa186f-000000@mail.vercel.com designates 206.55.150.64 as permitted sender) smtp.mailfrom=010101a0a4f2c781-9741a178-6cea-405d-9758-c256caaa186f-000000@mail.vercel.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=vercel.com
+Return-Path: <010101a0a4f2c781-9741a178-6cea-405d-9758-c256caaa186f-000000@mail.vercel.com>
+Received: from h150-64.smtp-out.us-west-2.amazonses.com (h150-64.smtp-out.us-west-2.amazonses.com. [206.55.150.64])
+        by mx.google.com with ESMTPS id d9443c01a7336-2dd30522c84si268493365ad.80.2026.09.15.05.02.50
+        for <nandpatel0912@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 15 Sep 2026 05:02:50 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010101a0a4f2c781-9741a178-6cea-405d-9758-c256caaa186f-000000@mail.vercel.com designates 206.55.150.64 as permitted sender) client-ip=206.55.150.64;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@vercel.com header.s=xrxz75cdd7hqmueggvr2yk4ulqxz34zd header.b=ZYT+ZKu9;
+       dkim=pass header.i=@amazonses.com header.s=hsbnp7p3ensaochzwyq5wwmceodymuwv header.b=k7Da31Hh;
+       spf=pass (google.com: domain of 010101a0a4f2c781-9741a178-6cea-405d-9758-c256caaa186f-000000@mail.vercel.com designates 206.55.150.64 as permitted sender) smtp.mailfrom=010101a0a4f2c781-9741a178-6cea-405d-9758-c256caaa186f-000000@mail.vercel.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=vercel.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=xrxz75cdd7hqmueggvr2yk4ulqxz34zd; d=vercel.com; t=1789473769;
+	h=From:Reply-To:To:Subject:MIME-Version:Content-Type:Message-ID:Date;
+	bh=+b/7iobvTvGFDcmhpZdOdqk+xXqVyfF7CO1X80xMVi0=;
+	b=ZYT+ZKu9kaJpuiKMw2PuhgTDGjzY3JKvW1xxd+NO0zE0Xs7W6Ei+hcblbTKh171r
+	ndCLTwtA6+Aql54U3WhWvacHmXkX1gC/zNjszX4D5NkruTupeTogiBR/8qeSHb6p/rB
+	Ug3nz0Kv4vkZqHIkWBwcuA31RpO3fLJ/EXo6W26ApcutirfkIn/3jk/Ix3FSK8ZfjQJ
+	knKxfrRuv9Tkwm6ijWe5bBhT2gTvprrTCjbcdaVeG3IOqcQzRC+zcUfh1OYA/CfPbcz
+	snomVX26Gs+4iP01TbY+41Ya/K8YWTcYzXbixwjYbYLhE8CorUTKIVD3Pwcok9KOELU
+	b9Pt0Z/vfQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=hsbnp7p3ensaochzwyq5wwmceodymuwv; d=amazonses.com; t=1789473769;
+	h=From:Reply-To:To:Subject:MIME-Version:Content-Type:Message-ID:Date:Feedback-ID;
+	bh=+b/7iobvTvGFDcmhpZdOdqk+xXqVyfF7CO1X80xMVi0=;
+	b=k7Da31HhwxfqwyYiSlWE3SF2msbsrMBFrc/CN1v6pfcLSpaqmgP3WUNHn+qiJkBi
+	cAtMFg7jTjCAmeGm74CuB6QL2B2FoGFPioqTrb8yFjra+dghFl1XkPoa8NbaVucKJe4
+	o9LBgnK1WhRAWLBcIcVdcMTdD7ymAjL5ZOJsTc9o=
+From: Vercel <notifications@vercel.com>
+Reply-To: no-reply@vercel.com
+To: nandpatel0912@gmail.com
+Subject: New sign-in detected on your Vercel account
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_144847_455479210.1789473769345"
+Message-ID: <010101a0a4f2c781-9741a178-6cea-405d-9758-c256caaa186f-000000@us-west-2.amazonses.com>
+Date: Tue, 15 Sep 2026 12:02:49 +0000
+Feedback-ID: ::1.us-west-2.FoOqCThWXVf6UxtlBCXjpN6DawGbMccagHDueWriYXM=:AmazonSES
+X-SES-Outgoing: 2026.09.15-206.55.150.64
+
+------=_Part_144847_455479210.1789473769345
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Vercel
+
+*******************************************
+
+New sign-in detected on your Vercel account
+*******************************************
+
+Hello, nandpatel0912-5046.
+
+Your Vercel account nandpatel0912@gmail.com was recently
+signed-in from a new location, device or browser:
+
+Location: Surat, Gujarat, India
+
+Time: Tuesday, September 15, 2026 at 12:02 PM UTC
+
+Browser: Chrome 152.0.0.0 on Windows 10
+
+Device:
+
+IP: 49.43.32.137
+
+Don't recognize this activity?
+
+Review your recent activity (https://e2.knock.app/t/eyJhbGciOiJIUzI1NiIsInR=
+5cCI6IkpXVCJ9.eyJoc3QiOiJlMi5rbm9jay5hcHAiLCJpYXQiOjE3ODk0NzM3NjkwMDc0OTEsI=
+mlkeCI6MCwibWlkIjoiM0pNYkR2V3o2RFBPcVo5WXlCUUdtR29kVTVBIiwidXJsIjoiaHR0cHM6=
+Ly92ZXJjZWwuY29tL2FjY291bnQvYWN0aXZpdHkifQ.B2Pb4AgLwnzFauVpAAT1z5LMdLkqbo6a=
+z-cw36rZvXU)
+and access tokens (https://e2.knock.app/t/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXV=
+CJ9.eyJoc3QiOiJlMi5rbm9jay5hcHAiLCJpYXQiOjE3ODk0NzM3NjkwMDc2MzYsImlkeCI6MCw=
+ibWlkIjoiM0pNYkR2V3o2RFBPcVo5WXlCUUdtR29kVTVBIiwidXJsIjoiaHR0cHM6Ly92ZXJjZW=
+wuY29tL2FjY291bnQvdG9rZW5zIn0.FY5cpxaKfdrdqup5u-v0htDSvdAYZe9fQondlEVbjdo) =
+now.
+
+This alert triggers when we detect a sign-in from an unrecognized
+location, device, or browser. Common causes: traveling, VPN or
+Private Relay, or a new browser.
+
+-----------------------------------------------------------------
+
+If you'd like to report an issue, reach out to Vercel Help
+(https://e2.knock.app/t/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoc3QiOiJlMi=
+5rbm9jay5hcHAiLCJpYXQiOjE3ODk0NzM3NjkwMDc3NjEsImlkeCI6MCwibWlkIjoiM0pNYkR2V=
+3o2RFBPcVo5WXlCUUdtR29kVTVBIiwidXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL2hlbHA_dXRt=
+X21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPW5vdGlmaWNhdGlvbnMpLiJ9.3Xbkx-dkj9M9rQj9f4=
+d4y_XqQKiKxmGhcPH4CLub3lc
+
+Manage your notification settings
+(https://e2.knock.app/t/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoc3QiOiJlMi=
+5rbm9jay5hcHAiLCJpYXQiOjE3ODk0NzM3NjkwMDc4ODgsImlkeCI6MCwibWlkIjoiM0pNYkR2V=
+3o2RFBPcVo5WXlCUUdtR29kVTVBIiwidXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL2Q_dG89JTJG=
+JTVCdGVhbSU1RCUyRiU3RSUyRnNldHRpbmdzJTJGbm90aWZpY2F0aW9ucyZ0aXRsZT1Ob3RpZml=
+jYXRpb24rU2V0dGluZ3MifQ.7SE-e_VxKz3r1yzVe5pDUfJhtvvZbTymTFI1prqAFBo)
+
+Copyright =C2=A9 2026 Vercel Inc.
+(https://e2.knock.app/t/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoc3QiOiJlMi=
+5rbm9jay5hcHAiLCJpYXQiOjE3ODk0NzM3NjkwMDgwMTAsImlkeCI6MCwibWlkIjoiM0pNYkR2V=
+3o2RFBPcVo5WXlCUUdtR29kVTVBIiwidXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tP3V0bV9tZWRp=
+dW09ZW1haWwmdXRtX3NvdXJjZT1ub3RpZmljYXRpb25zIn0.bS0TKSgnls5BXkxw9OHa6TOiRWz=
+iabSLCzq3zJN21xo)
+All rights reserved.
+
+440 N Barranca Ave #4133 Covina, CA 91723
+
+:root { color-scheme: light dark; }
+
+.body { background-color: #ffffff; margin: 0; padding: 0; }
+.outer-table, .outer-td, .inner-td { background-color: #ffffff; }
+
+.block-row__cell { padding: 0 !important; }
+.block-row { padding: 0 !important; }
+
+p {
+color: #171717;
+font-family: -apple-system,BlinkMacSystemFont,'Segoe
+UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid
+Sans','Helvetica Neue',sans-serif;
+font-size: 16px; line-height: 1.5; margin: 0 0 16px 0;
+overflow-wrap: anywhere;
+}
+.break-all { color: #171717; font-size: 16px; line-height: 1.5;
+word-break: break-all; }
+h1 {
+color: #171717;
+font-family: -apple-system,BlinkMacSystemFont,'Segoe
+UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid
+Sans','Helvetica Neue',sans-serif;
+font-size: 24px; font-weight: 600; letter-spacing: -0.02em;
+margin: 0 0 24px 0; padding: 0;
+}
+h2 { color: #171717; font-size: 18px; font-weight: 600; margin: 0
+0 16px 0; }
+h3 { color: #171717; font-size: 16px; font-weight: 600; margin: 0
+0 12px 0; }
+a { color: #0067D6; text-decoration: none; }
+.block-markdown a { color: #0067D6; text-decoration: none; }
+a.block-button { color: inherit; }
+strong { color: #171717; font-weight: 600; }
+pre {
+font-family:
+ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation
+Mono','Courier New',monospace;
+color: #171717; background-color: #F2F2F2; border: 1px solid
+#E6E6E6;
+padding: 12px 16px; border-radius: 8px; font-size: 14px;
+max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+}
+code.inline {
+font-family:
+ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation
+Mono','Courier New',monospace;
+color: #171717; font-size: 0.9em; background-color: #F2F2F2;
+padding: 2px 6px; border-radius: 4px;
+}
+ul, ol { padding-left: 20px; margin: -8px 0 16px 0; }
+li { font-family: -apple-system,BlinkMacSystemFont,'Segoe
+UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid
+Sans','Helvetica Neue',sans-serif; font-size: 16px; line-height:
+1.75; color: #171717; }
+.footer-text { color: #7D7D7D; font-size: 14px; line-height: 1.5;
+margin: 0 0 8px 0; }
+.footer-text a { color: #7D7D7D !important; text-decoration:
+underline !important; font-weight: 400 !important; }
+.footer-link { color: #7D7D7D !important; text-decoration:
+underline !important; font-weight: 400 !important; }
+.footer-hr { border-top-color: #E6E6E6; }
+
+.block-row.block-row--button_set-v1 { margin: 32px 0 !important;
+}
+.block-row.block-row--button_set-v1 .block-button { display:
+inline-block; box-sizing: border-box; text-decoration: none;
+-webkit-text-size-adjust: none; }
+.block-row.block-row--button_set-v1
+.block-button.block-button--solid.block-button--sm {
+background-color: #000000; border-radius: 8px !important; color:
+#ffffff;
+font-family: -apple-system,BlinkMacSystemFont,'Segoe
+UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid
+Sans','Helvetica Neue',sans-serif;
+font-size: 16px !important; font-weight: 500; line-height: 1em
+!important;
+mso-line-height-rule: exactly; padding: 12px 20px !important;
+text-align: center; text-decoration: none;
+}
+.block-row.block-row--button_set-v1
+.block-button.block-button--outline {
+border-style: solid; border-color: #E6E6E6; border-radius: 8px;
+color: #171717; font-size: 16px; font-weight: 500; padding: 14px
+20px;
+}
+.block-row.block-row--divider-v1 .block-divider { border-bottom:
+1px solid #E6E6E6; }
+.block-row.block-row--markdown-v1 .block-markdown > :first-child
+{ margin-top: 0; }
+.block-row.block-row--markdown-v1 .block-markdown > :last-child {
+margin-bottom: 0; }
+.vercel-logo { mix-blend-mode: difference; }
+
+@media (prefers-color-scheme: dark) {
+.body, .outer-table, .outer-td, .inner-td { background-color:
+#111111 !important; }
+p, .break-all, li, td { color: #ededed !important; }
+h1, h2, h3, strong { color: #ffffff !important; }
+a { color: #4da3ff !important; }
+td[bgcolor=3D"#000000"], .email-cta { background-color: #EDEDED
+!important; }
+td[bgcolor=3D"#000000"] a, .email-cta a { color: #0A0A0A
+!important; background-color: #EDEDED !important; }
+pre { color: #ededed !important; background-color: #282828
+!important; border-color: #333333 !important; }
+code, code.inline { color: #ededed !important; background-color:
+#282828 !important; }
+.footer-text, .footer-text p { color: #7D7D7D !important; }
+.footer-text a { color: #7D7D7D !important; }
+.footer-link { color: #7D7D7D !important; }
+.footer-hr { border-top-color: #333333 !important; }
+.block-row.block-row--button_set-v1
+.block-button.block-button--solid.block-button--sm {
+background-color: #EDEDED; color: #0A0A0A;}
+.block-row.block-row--button_set-v1
+.block-button.block-button--outline { border-color: #333333
+!important; color: #ededed !important; }
+.block-row.block-row--divider-v1 .block-divider {
+border-bottom-color: #333333 !important; }
+.vercel-code-block { background-color: #282828 !important; color:
+#ffffff !important; }
+.vercel-label-default { background-color: #282828 !important;
+color: #ededed !important; }
+.vercel-label-info { background-color: #0A2540 !important; color:
+#4da3ff !important; }
+.vercel-label-error { background-color: #3D1417 !important;
+color: #FF6166 !important; }
+.block-button { background-color: #EDEDED !important; color:
+#0A0A0A !important; }
+}
+
+@media only screen and (max-width: 620px) {
+.outer-td { padding: 32px 16px !important; }
+}
+------=_Part_144847_455479210.1789473769345
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html style=3D"color-scheme:light dark"><head><style type=3D"text/css" rel=
+=3D"stylesheet" media=3D"all">
+.block-row.block-row--button_set-v1 .block-button {
+  display: inline-block;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-text-size-adjust: none;
+}
+.block-row.block-row--button_set-v1 .block-button.block-button--outline {
+  border-style: solid;
+}
+.block-row.block-row--button_set-v1 .block-button.block-button--sm {
+  font-size: 14px;
+  line-height: 20px;
+  min-width: 32px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.block-row.block-row--divider-v1 .block-divider {
+  border-bottom: 1px solid #DDDEE1;
+}
+.block-row.block-row--markdown-v1 .block-markdown > :first-child {
+  margin-top: 0;
+}
+.block-row.block-row--markdown-v1 .block-markdown > :last-child {
+  margin-bottom: 0;
+}
+</style><meta name=3D"color-scheme" content=3D"light dark"/><meta name=3D"s=
+upported-color-schemes" content=3D"light dark"/></head><body class=3D"body"=
+ style=3D"background-color:#ffffff;margin:0;padding:0"><table class=3D"oute=
+r-table" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" st=
+yle=3D"width:100%!important;background-color:#ffffff"><tbody><tr><td class=
+=3D"outer-td" align=3D"center" style=3D"background-color:#ffffff;padding:32=
+px 16px"><table width=3D"600" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"max-width:600px;width:100%;"><tbody><tr><td class=3D"inner-td"=
+ style=3D"background-color:#ffffff"><div style=3D"font-family:-apple-system=
+,BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#=
+39;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;=
+,&#39;Helvetica Neue&#39;,sans-serif;text-align:left;max-width:600px;"><div=
+ style=3D"margin-bottom:48px"><img class=3D"vercel-logo" src=3D"https://lis=
+hhsx6kmthaacj.public.blob.vercel-storage.com/icon.png" width=3D"24" height=
+=3D"21" alt=3D"Vercel" style=3D"display:block;mix-blend-mode:difference"/><=
+/div><table class=3D"block-row block-row--markdown-v1" id=3D"5486dd74-4615-=
+4a55-9309-978fe6751358" cellspacing=3D"0" width=3D"100%" cellpadding=3D"0" =
+style=3D"padding:0 !important"><tbody><tr class=3D"block-row__row"><td clas=
+s=3D"block-row__cell" style=3D"padding:0 !important;padding-bottom:0px;padd=
+ing-left:0px;padding-right:0px;padding-top:0px"><table width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0"><tbody><tr><td class=3D"block-markdown"><h1 =
+style=3D"color:#171717;font-family:-apple-system,BlinkMacSystemFont,&#39;Se=
+goe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Cantare=
+ll&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,&#39;Helvetica Neue&#39;,s=
+ans-serif;font-size:24px;font-weight:600;letter-spacing:-0.02em;margin:0 0 =
+24px 0;padding:0;margin-top:0">
+New sign-in detected on your Vercel account</h1><p style=3D"color:#171717;f=
+ont-family:-apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&=
+#39;,&#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#=
+39;,&#39;Droid Sans&#39;,&#39;Helvetica Neue&#39;,sans-serif;font-size:16px=
+;line-height:1.5;margin:0 0 16px 0;overflow-wrap:anywhere">
+Hello, <strong style=3D"color:#171717;font-weight:600">nandpatel0912-5046</=
+strong>.</p><p style=3D"color:#171717;font-family:-apple-system,BlinkMacSys=
+temFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#39;Ubuntu&#3=
+9;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,&#39;Helvet=
+ica Neue&#39;,sans-serif;font-size:16px;line-height:1.5;margin:0 0 16px 0;o=
+verflow-wrap:anywhere;margin-bottom:0">
+Your Vercel account <a href=3D"mailto:nandpatel0912@gmail.com" style=3D"col=
+or:#0067D6;text-decoration:none">nandpatel0912@gmail.com</a> was recently s=
+igned-in from a new location, device or browser:</p></td></tr></tbody></tab=
+le></td></tr></tbody></table><table class=3D"block-row block-row--html-v1" =
+id=3D"a23d29bd-33fb-4169-930b-3caa0a5422dd" cellspacing=3D"0" width=3D"100%=
+" cellpadding=3D"0" style=3D"padding:0 !important"><tbody><tr class=3D"bloc=
+k-row__row"><td class=3D"block-row__cell" style=3D"padding:0 !important"><p=
+ style=3D"color:#171717;font-family:-apple-system,BlinkMacSystemFont,&#39;S=
+egoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Cantar=
+ell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,&#39;Helvetica Neue&#39;,=
+sans-serif;font-size:16px;line-height:1.5;overflow-wrap:anywhere;margin:16p=
+x 0 4px 0"><strong style=3D"color:#171717;font-weight:600">Location:</stron=
+g> Surat, Gujarat, India</p><p style=3D"color:#171717;font-family:-apple-sy=
+stem,BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39=
+;,&#39;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&=
+#39;,&#39;Helvetica Neue&#39;,sans-serif;font-size:16px;line-height:1.5;ove=
+rflow-wrap:anywhere;margin:0 0 4px 0"><strong style=3D"color:#171717;font-w=
+eight:600">Time:</strong> Tuesday, September 15, 2026 at 12:02 PM UTC</p><p=
+ style=3D"color:#171717;font-family:-apple-system,BlinkMacSystemFont,&#39;S=
+egoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Cantar=
+ell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,&#39;Helvetica Neue&#39;,=
+sans-serif;font-size:16px;line-height:1.5;overflow-wrap:anywhere;margin:0 0=
+ 4px 0"><strong style=3D"color:#171717;font-weight:600">Browser:</strong> C=
+hrome 152.0.0.0 on Windows 10</p><p style=3D"color:#171717;font-family:-app=
+le-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxyge=
+n&#39;,&#39;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#39;Droid =
+Sans&#39;,&#39;Helvetica Neue&#39;,sans-serif;font-size:16px;line-height:1.=
+5;overflow-wrap:anywhere;margin:0 0 4px 0"><strong style=3D"color:#171717;f=
+ont-weight:600">Device:</strong> </p><p style=3D"color:#171717;font-family:=
+-apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&#39;O=
+xygen&#39;,&#39;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#39;Dr=
+oid Sans&#39;,&#39;Helvetica Neue&#39;,sans-serif;font-size:16px;line-heigh=
+t:1.5;overflow-wrap:anywhere;margin:0 0 0 0"><strong style=3D"color:#171717=
+;font-weight:600">IP:</strong> 49.43.32.137</p></td></tr></tbody></table><t=
+able class=3D"block-row block-row--html-v1" id=3D"50d55961-fecd-4aba-8a09-b=
+8dc7ee51b83" cellspacing=3D"0" width=3D"100%" cellpadding=3D"0" style=3D"pa=
+dding:0 !important"><tbody><tr class=3D"block-row__row"><td class=3D"block-=
+row__cell" style=3D"padding:0 !important"><p style=3D"color:#171717;font-fa=
+mily:-apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&=
+#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#=
+39;Droid Sans&#39;,&#39;Helvetica Neue&#39;,sans-serif;font-size:16px;line-=
+height:1.5;overflow-wrap:anywhere;margin:24px 0 16px 0"><strong style=3D"co=
+lor:#171717;font-weight:600">Don&#39;t recognize this activity?</strong></p=
+><p style=3D"color:#171717;font-family:-apple-system,BlinkMacSystemFont,&#3=
+9;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Can=
+tarell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,&#39;Helvetica Neue&#3=
+9;,sans-serif;font-size:16px;line-height:1.5;margin:0 0 16px 0;overflow-wra=
+p:anywhere">Review your <a href=3D"https://e2.knock.app/t/eyJhbGciOiJIUzI1N=
+iIsInR5cCI6IkpXVCJ9.eyJoc3QiOiJlMi5rbm9jay5hcHAiLCJpYXQiOjE3ODk0NzM3NjkwMDg=
+zMzUsImlkeCI6MCwibWlkIjoiM0pNYkR2V3o2RFBPcVo5WXlCUUdtR29kVTVBIiwidXJsIjoiaH=
+R0cHM6Ly92ZXJjZWwuY29tL2FjY291bnQvYWN0aXZpdHkifQ.axizZe2YFxccWqq7bPcHmeU-Q-=
+5mS2U2qUAUyPmz05I" style=3D"color:#0067D6;text-decoration:none">recent acti=
+vity</a> and <a href=3D"https://e2.knock.app/t/eyJhbGciOiJIUzI1NiIsInR5cCI6=
+IkpXVCJ9.eyJoc3QiOiJlMi5rbm9jay5hcHAiLCJpYXQiOjE3ODk0NzM3NjkwMDg0OTIsImlkeC=
+I6MCwibWlkIjoiM0pNYkR2V3o2RFBPcVo5WXlCUUdtR29kVTVBIiwidXJsIjoiaHR0cHM6Ly92Z=
+XJjZWwuY29tL2FjY291bnQvdG9rZW5zIn0.28RIA0A7KgnskWfOkwVm8XcqWC2ArmHtCqN4ywD9=
+dgk" style=3D"color:#0067D6;text-decoration:none">access tokens</a> now.</p=
+><p style=3D"color:#171717;font-family:-apple-system,BlinkMacSystemFont,&#3=
+9;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Can=
+tarell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,&#39;Helvetica Neue&#3=
+9;,sans-serif;font-size:16px;line-height:1.5;overflow-wrap:anywhere;margin:=
+16px 0 0 0">This alert triggers when we detect a sign-in from an unrecogniz=
+ed location, device, or browser. Common causes: traveling, VPN or Private R=
+elay, or a new browser.</p></td></tr></tbody></table><hr class=3D"footer-hr=
+" style=3D"border-top-color:#E6E6E6;border:none;border-top:1px solid #E6E6E=
+6;margin:44px 0 32px 0;width:100%"/><p class=3D"footer-text" style=3D"font-=
+family:-apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;=
+,&#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,=
+&#39;Droid Sans&#39;,&#39;Helvetica Neue&#39;,sans-serif;overflow-wrap:anyw=
+here;color:#7D7D7D;font-size:14px;line-height:1.5;margin:0 0 8px 0">If you&=
+#39;d like to report an issue, reach out to <a class=3D"footer-link" href=
+=3D"https://e2.knock.app/t/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoc3QiOiJ=
+lMi5rbm9jay5hcHAiLCJpYXQiOjE3ODk0NzM3NjkwMDg3NDQsImlkeCI6MCwibWlkIjoiM0pNYk=
+R2V3o2RFBPcVo5WXlCUUdtR29kVTVBIiwidXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL2hlbHA_d=
+XRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPW5vdGlmaWNhdGlvbnMifQ.VXuF70GZU4RqAYVc4=
+wAaNYxceMLy3puqssikkmBd0Hk" style=3D"color:#7D7D7D !important;text-decorati=
+on:underline !important;font-weight:400 !important" target=3D"_blank">Verce=
+l Help</a>.</p><p class=3D"footer-text" style=3D"font-family:-apple-system,=
+BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#3=
+9;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,=
+&#39;Helvetica Neue&#39;,sans-serif;overflow-wrap:anywhere;color:#7D7D7D;fo=
+nt-size:14px;line-height:1.5;margin:0 0 8px 0"><a class=3D"footer-link" hre=
+f=3D"https://e2.knock.app/t/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoc3QiOi=
+JlMi5rbm9jay5hcHAiLCJpYXQiOjE3ODk0NzM3NjkwMDg4NjMsImlkeCI6MCwibWlkIjoiM0pNY=
+kR2V3o2RFBPcVo5WXlCUUdtR29kVTVBIiwidXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL2Q_dG89=
+JTJGJTVCdGVhbSU1RCUyRiU3RSUyRnNldHRpbmdzJTJGbm90aWZpY2F0aW9ucyZ0aXRsZT1Ob3R=
+pZmljYXRpb24rU2V0dGluZ3MifQ.1fRzh_jkosG7-Y-y8FLtzy85rpNIRoredH4vlcv3HV4" st=
+yle=3D"color:#7D7D7D !important;text-decoration:underline !important;font-w=
+eight:400 !important" target=3D"_blank">Manage your notification settings</=
+a></p><p class=3D"footer-text" style=3D"font-family:-apple-system,BlinkMacS=
+ystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#39;Ubuntu&=
+#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,&#39;Helv=
+etica Neue&#39;,sans-serif;overflow-wrap:anywhere;color:#7D7D7D;font-size:1=
+4px;line-height:1.5;margin:0 0 8px 0">
+                    Copyright =C2=A9 2026 <a class=3D"footer-link" href=3D"=
+https://e2.knock.app/t/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoc3QiOiJlMi5=
+rbm9jay5hcHAiLCJpYXQiOjE3ODk0NzM3NjkwMDkwMjEsImlkeCI6MCwibWlkIjoiM0pNYkR2V3=
+o2RFBPcVo5WXlCUUdtR29kVTVBIiwidXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tP3V0bV9tZWRpd=
+W09ZW1haWwmdXRtX3NvdXJjZT1ub3RpZmljYXRpb25zIn0._8na4RwjTB9SHj9Rd1k60Nt1dfUl=
+iuR3c6gqLv86QYY" style=3D"color:#7D7D7D !important;text-decoration:underlin=
+e !important;font-weight:400 !important" target=3D"_blank">Vercel Inc.</a> =
+All rights reserved.<br/>
+                    440 N Barranca Ave #4133 Covina, CA 91723
+                  </p></div></td></tr></tbody></table></td></tr></tbody></t=
+able><style>
+  :root { color-scheme: light dark; }
+
+  .body { background-color: #ffffff; margin: 0; padding: 0; }
+  .outer-table, .outer-td, .inner-td { background-color: #ffffff; }
+
+  .block-row__cell { padding: 0 !important; }
+  .block-row { padding: 0 !important; }
+
+  p {
+    color: #171717;
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxyg=
+en','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-ser=
+if;
+    font-size: 16px; line-height: 1.5; margin: 0 0 16px 0; overflow-wrap: a=
+nywhere;
+  }
+  .break-all { color: #171717; font-size: 16px; line-height: 1.5; word-brea=
+k: break-all; }
+  h1 {
+    color: #171717;
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxyg=
+en','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-ser=
+if;
+    font-size: 24px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0=
+ 24px 0; padding: 0;
+  }
+  h2 { color: #171717; font-size: 18px; font-weight: 600; margin: 0 0 16px =
+0; }
+  h3 { color: #171717; font-size: 16px; font-weight: 600; margin: 0 0 12px =
+0; }
+  a { color: #0067D6; text-decoration: none; }
+  .block-markdown a { color: #0067D6; text-decoration: none; }
+  a.block-button { color: inherit; }
+  strong { color: #171717; font-weight: 600; }
+  pre {
+    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberat=
+ion Mono','Courier New',monospace;
+    color: #171717; background-color: #F2F2F2; border: 1px solid #E6E6E6;
+    padding: 12px 16px; border-radius: 8px; font-size: 14px; max-width: 100=
+%; overflow: hidden; text-overflow: ellipsis;
+  }
+  code.inline {
+    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberat=
+ion Mono','Courier New',monospace;
+    color: #171717; font-size: 0.9em; background-color: #F2F2F2; padding: 2=
+px 6px; border-radius: 4px;
+  }
+  ul, ol { padding-left: 20px; margin: -8px 0 16px 0; }
+  li { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','O=
+xygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-=
+serif; font-size: 16px; line-height: 1.75; color: #171717; }
+  .footer-text { color: #7D7D7D; font-size: 14px; line-height: 1.5; margin:=
+ 0 0 8px 0; }
+  .footer-text a { color: #7D7D7D !important; text-decoration: underline !i=
+mportant; font-weight: 400 !important; }
+  .footer-link { color: #7D7D7D !important; text-decoration: underline !imp=
+ortant; font-weight: 400 !important; }
+  .footer-hr { border-top-color: #E6E6E6; }
+
+  .block-row.block-row--button_set-v1 { margin: 32px 0 !important; }
+  .block-row.block-row--button_set-v1 .block-button { display: inline-block=
+; box-sizing: border-box; text-decoration: none; -webkit-text-size-adjust: =
+none; }
+  .block-row.block-row--button_set-v1 .block-button.block-button--solid.blo=
+ck-button--sm {
+    background-color: #000000; border-radius: 8px !important; color: #fffff=
+f;
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxyg=
+en','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-ser=
+if;
+    font-size: 16px !important; font-weight: 500; line-height: 1em !importa=
+nt;
+    mso-line-height-rule: exactly; padding: 12px 20px !important; text-alig=
+n: center; text-decoration: none;
+  }
+  .block-row.block-row--button_set-v1 .block-button.block-button--outline {
+    border-style: solid; border-color: #E6E6E6; border-radius: 8px; color: =
+#171717; font-size: 16px; font-weight: 500; padding: 14px 20px;
+  }
+  .block-row.block-row--divider-v1 .block-divider { border-bottom: 1px soli=
+d #E6E6E6; }
+  .block-row.block-row--markdown-v1 .block-markdown > :first-child { margin=
+-top: 0; }
+  .block-row.block-row--markdown-v1 .block-markdown > :last-child { margin-=
+bottom: 0; }
+  .vercel-logo { mix-blend-mode: difference; }
+
+  @media (prefers-color-scheme: dark) {
+    .body, .outer-table, .outer-td, .inner-td { background-color: #111111 !=
+important; }
+    p, .break-all, li, td { color: #ededed !important; }
+    h1, h2, h3, strong { color: #ffffff !important; }
+    a { color: #4da3ff !important; }
+    td[bgcolor=3D"#000000"], .email-cta { background-color: #EDEDED !import=
+ant; }
+    td[bgcolor=3D"#000000"] a, .email-cta a { color: #0A0A0A !important; ba=
+ckground-color: #EDEDED !important; }
+    pre { color: #ededed !important; background-color: #282828 !important; =
+border-color: #333333 !important; }
+    code, code.inline { color: #ededed !important; background-color: #28282=
+8 !important; }
+    .footer-text, .footer-text p { color: #7D7D7D !important; }
+    .footer-text a { color: #7D7D7D !important; }
+    .footer-link { color: #7D7D7D !important; }
+    .footer-hr { border-top-color: #333333 !important; }
+    .block-row.block-row--button_set-v1 .block-button.block-button--solid.b=
+lock-button--sm { background-color: #EDEDED; color: #0A0A0A;}
+    .block-row.block-row--button_set-v1 .block-button.block-button--outline=
+ { border-color: #333333 !important; color: #ededed !important; }
+    .block-row.block-row--divider-v1 .block-divider { border-bottom-color: =
+#333333 !important; }
+    .vercel-code-block { background-color: #282828 !important; color: #ffff=
+ff !important; }
+    .vercel-label-default { background-color: #282828 !important; color: #e=
+deded !important; }
+    .vercel-label-info { background-color: #0A2540 !important; color: #4da3=
+ff !important; }
+    .vercel-label-error { background-color: #3D1417 !important; color: #FF6=
+166 !important; }
+    .block-button { background-color: #EDEDED !important; color: #0A0A0A !i=
+mportant; }
+  }
+
+  @media only screen and (max-width: 620px) {
+    .outer-td { padding: 32px 16px !important; }
+  }
+</style><img src=3D"https://c1.knoclick.com/t/eyJhbGciOiJIUzI1NiIsInR5cCI6I=
+kpXVCJ9.eyJpYXQiOjE3ODk0NzM3NjkwMDkxODEsIm1pZCI6IjNKTWJEdld6NkRQT3FaOVl5QlF=
+HbUdvZFU1QSJ9.E-1lB5Xte8SJQmg5WXy4D3xKlPmYwl1N0wrWI-JhNFM/k.png" class=3D"k=
+-png" width=3D"1px" height=3D"1px" role=3D"none"/></body></html>
+------=_Part_144847_455479210.1789473769345--

@@ -1,0 +1,26 @@
+Return-Path: <"Amazon Web Service" <billing@amaz0n-cloud-services.org>>
+Delivered-To: victim-1@enterprise.org
+Received: from mail.amaz0n-cloud-services.org (mail.amaz0n-cloud-services.org [203.0.113.21]) by mx.google.com with ESMTP id 82dbf6e391c1; Mon, 14 Sep 2026 19:01:32 +0000
+Received-SPF: softfail (amaz0n-cloud-services.org: domain designates 203.0.113.21 as permitted sender) client-ip=203.0.113.21;
+Authentication-Results: mx.google.com; spf=softfail smtp.mailfrom=amaz0n-cloud-services.org; dkim=fail header.i=@amaz0n-cloud-services.org; dmarc=fail header.from=amaz0n-cloud-services.org
+From: "Amazon Web Service" <billing@amaz0n-cloud-services.org>
+To: victim-1@enterprise.org
+Subject: Suspension Notice: Outstanding balance of $3,420.00 on AWS tenant
+Date: Mon, 14 Sep 2026 19:01:32 +0000
+Message-ID: <80d7f742-d304-4d01-bac1-78cf721b5698@amaz0n-cloud-services.org>
+Reply-To: reply-1@amaz0n-cloud-services.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Notice from Amazon Web.
+
+Suspension Notice: Outstanding balance of $3,420.00 on AWS tenant.
+
+To protect your access and avoid immediate service interruption, please access the portal below:
+https://amaz0n-cloud-services.org/settle-balance
+
+Reference ID: REF-5920
+Timestamp: 2026-09-17T09:42:32.845162+00:00
+
+Amazon Web Automated Customer Operations

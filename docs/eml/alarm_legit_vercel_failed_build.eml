@@ -1,0 +1,27 @@
+Return-Path: <"Vercel" <notifications@vercel.com>>
+Delivered-To: frontend-team@enterprise.org
+Received: from mail.vercel.com (mail.vercel.com [198.2.186.24]) by mx.google.com with ESMTP id e77c754a78cb; Sun, 13 Sep 2026 08:37:32 +0000
+Received-SPF: pass (vercel.com: domain designates 198.2.186.24 as permitted sender) client-ip=198.2.186.24;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=vercel.com; dkim=pass header.i=@vercel.com; dmarc=pass header.from=vercel.com
+From: "Vercel" <notifications@vercel.com>
+To: frontend-team@enterprise.org
+Subject: [Vercel] Deployment failed for project 'email-threat-ui' (commit #88a21e)
+Date: Sun, 13 Sep 2026 08:37:32 +0000
+Message-ID: <1618141f-4f62-4174-b233-c5bcf36ee652@vercel.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Deployment Error: Command 'npm run build' exited with code 1.
+
+Project: email-threat-ui
+Branch: main
+Commit: 88a21e (chore: sync production dependencies)
+
+Error Summary:
+Type error: Property 'evidence_graph' does not exist on type 'AnalysisResult'.
+
+Inspect deployment logs:
+https://vercel.com/enterprise-org/email-threat-ui/deployments/dpl_992140a
+
+Vercel Team

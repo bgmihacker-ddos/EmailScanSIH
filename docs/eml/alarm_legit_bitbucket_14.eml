@@ -1,0 +1,24 @@
+Return-Path: <"Bitbucket Security" <notifications@bitbucket.org>>
+Delivered-To: team-member-14@enterprise.org
+Received: from mail.bitbucket.org (mail.bitbucket.org [198.51.100.24]) by mx.google.com with ESMTP id 5f61a3ac2066; Sat, 12 Sep 2026 03:58:32 +0000
+Received-SPF: pass (bitbucket.org: domain designates 198.51.100.24 as permitted sender) client-ip=198.51.100.24;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=bitbucket.org; dkim=pass header.i=@bitbucket.org; dmarc=pass header.from=bitbucket.org
+From: "Bitbucket Security" <notifications@bitbucket.org>
+To: team-member-14@enterprise.org
+Subject: Repository push rejected: secret token detected in git history
+Date: Sat, 12 Sep 2026 03:58:32 +0000
+Message-ID: <9a7d2cbe-8b72-41bb-896c-b0e61549ff1b@bitbucket.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Official notification from Bitbucket.
+
+Repository push rejected: secret token detected in git history.
+
+This automated security communication was generated to protect your enterprise account.
+Please review your configuration or activity:
+https://bitbucket.org/enterprise/core-repo
+
+If you have questions, please reach out to our official verified support team.
+Bitbucket Customer Trust & Security.

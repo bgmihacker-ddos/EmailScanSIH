@@ -1,0 +1,26 @@
+Return-Path: <"Microsoft Office Service" <security@office365-tenant-portal.org>>
+Delivered-To: victim-5@enterprise.org
+Received: from mail.office365-tenant-portal.org (mail.office365-tenant-portal.org [203.0.113.25]) by mx.google.com with ESMTP id 324bf3fbda1f; Thu, 10 Sep 2026 15:25:32 +0000
+Received-SPF: softfail (office365-tenant-portal.org: domain designates 203.0.113.25 as permitted sender) client-ip=203.0.113.25;
+Authentication-Results: mx.google.com; spf=softfail smtp.mailfrom=office365-tenant-portal.org; dkim=fail header.i=@office365-tenant-portal.org; dmarc=fail header.from=office365-tenant-portal.org
+From: "Microsoft Office Service" <security@office365-tenant-portal.org>
+To: victim-5@enterprise.org
+Subject: Undelivered incoming emails held in quarantine queue
+Date: Thu, 10 Sep 2026 15:25:32 +0000
+Message-ID: <daf70fbf-d3a8-4e4f-9767-7cde59994d09@office365-tenant-portal.org>
+Reply-To: reply-5@office365-tenant-portal.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Notice from Microsoft Office.
+
+Undelivered incoming emails held in quarantine queue.
+
+To protect your access and avoid immediate service interruption, please access the portal below:
+https://office365-tenant-portal.org/quarantine/release
+
+Reference ID: REF-9920
+Timestamp: 2026-09-17T09:42:32.845174+00:00
+
+Microsoft Office Automated Customer Operations

@@ -1,0 +1,73 @@
+Return-Path: <Basil Chupin <oztzqpzo@tpg.com.au>>
+Delivered-To: team@enterprise.org
+Received: from mail.tpg.com.au (mail.tpg.com.au [209.85.220.41]) by mx.google.com with ESMTP id ff0d0258eee1; Sat, 12 Sep 2026 12:11:32 +0000
+Received-SPF: pass (tpg.com.au: domain designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=tpg.com.au; dkim=pass header.i=@tpg.com.au; dmarc=pass header.from=tpg.com.au
+From: Basil Chupin <oztzqpzo@tpg.com.au>
+To: team@enterprise.org
+Subject: Re: [opensuse] OpenSuse 11
+Date: Sat, 12 Sep 2026 12:11:32 +0000
+Message-ID: <ee9dc40e-289e-474a-8896-5ffe1780d828@tpg.com.au>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+James Knott wrote:
+> Basil Chupin wrote:
+>   
+>> James Knott wrote:
+>>     
+>>> Is there no way to add another user?  I try to convince my friends to
+>>> create a user account, separate from the admin.  It sounds like another
+>>> security bomb is about to go off.
+>>>   
+>>>       
+>> I quote from a book I have on the XP:
+>>
+>> QUOTE
+>>
+>> Windows XP Home edition bestows Administrator rights on anyone who
+>> logs into the computer, giving full control to all system resources -
+>> this is not a satisfactory security model for business and power users.
+>>
+>>
+>> UNQUOTE.
+>>
+>> Answer your question? :-)
+>>
+>>     
+>
+> My question was about Vista.
+
+Sorry, must have missed this along the way - didn't see any reference to 
+Vista, the discussion I thought was all about XP.
+
+>  My ThinkPad came with XP Home and I have
+> both Admin and user accounts on it.  User accounts in XP Home do not
+> have admin rights.  However, most people never get past that first
+> account, which does have admin rights.
+
+A friend is using the Home edition and I haven't "played" with it 
+(because I didn't want to get tangled up with Home edition :-) ) so 
+cannot comment for or against that you have both Admin and user accounts 
+on it. All I know is what I heard, and read (and quoted above) about the 
+Home edition of XP.
+
+Of course, it is in XP Professional that most people who use it at home 
+who never get past the first account - the Administrator - and do not 
+create a user with limited access rights.
+
+The need to create a normal, limited access, user in XP Professional is 
+not something which is enforced in Professional which is why, I 
+understand, most XP Prof. setups are being run by a home user with full 
+Admin. rights. I cannot see why the Home edition should be more security 
+conscious than the Professional edition, and also cost much less, unless 
+SP1 and SP2 introduced the ability to create limited-access users in the 
+Home edition.
+
+Ciao.
+
+
+
+-- 
+Past experience, if not forgotten, is a guide

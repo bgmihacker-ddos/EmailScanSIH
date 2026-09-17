@@ -1,0 +1,182 @@
+{
+  "model_version": "tfidf-logreg-calibrated-v3",
+  "artifact_version": 2,
+  "training_timestamp": "2026-09-16T19:12:49.251929+00:00",
+  "random_seed": 42,
+  "calibrated": true,
+  "decision_threshold": 0.4,
+  "classes": [
+    "benign",
+    "phishing"
+  ],
+  "dataset_inventory": {
+    "NotShrirang_email_spam.csv": {
+      "source_type": "public",
+      "raw_samples": 5171,
+      "file_size_bytes": 5406177,
+      "sha256": "3ebba86ed65032fe9fc0d26748f1496d6fd133e4e20760462674f1d61d83fbe7"
+    },
+    "Merged_Dataset.csv": {
+      "source_type": "public",
+      "raw_samples": 162409,
+      "file_size_bytes": 290244986,
+      "sha256": "2a827b8dba8c2ded78f9bb91ad9323433304ceb07b36a057901ea691fa0fab05"
+    },
+    "Phishing_Email.csv": {
+      "source_type": "public",
+      "raw_samples": 18647,
+      "file_size_bytes": 52015953,
+      "sha256": "41290f595b8b436cb7e292e6463fd5640024e7f2dc3a520a29756bde01ea02c4"
+    },
+    "phishing_legitimate_emails.csv": {
+      "source_type": "public",
+      "raw_samples": 7142,
+      "file_size_bytes": 823691,
+      "sha256": "805d97e31286791a773dc23f879475039883205736c3cab5d7d15b7a19f0d99f"
+    },
+    "mail_data.csv": {
+      "source_type": "public",
+      "raw_samples": 5572,
+      "file_size_bytes": 480130,
+      "sha256": "d73ef5f612087af04c7d9094cda54beed3b3fe15b60faac43e72263dd8d2049f"
+    },
+    "human_phishing.csv": {
+      "source_type": "human",
+      "raw_samples": 1000,
+      "file_size_bytes": 1337693,
+      "sha256": "73cd8a5cf2f6a73c60761e640284a05b05d1ac592001e5a872340364f170f24e"
+    },
+    "human_legit.csv": {
+      "source_type": "human",
+      "raw_samples": 1200,
+      "file_size_bytes": 4272175,
+      "sha256": "7a0659cc088fee33836066f826e2dc434880ef0ee467f51d8c72713775e71019"
+    },
+    "llm_phishing.csv": {
+      "source_type": "llm",
+      "raw_samples": 1000,
+      "file_size_bytes": 660438,
+      "sha256": "dbd2a5581c788416e80e8cffb0d66bb15519a6f9fade36c9dc8b93a6637f091b"
+    },
+    "llm_legit.csv": {
+      "source_type": "llm",
+      "raw_samples": 1000,
+      "file_size_bytes": 647933,
+      "sha256": "fc932a6f08487a859d03896809006cbd572c60f4f53d31ec63aa0889437a28db"
+    }
+  },
+  "partitions": {
+    "total_deduplicated_samples": 193047,
+    "train_samples": 152718,
+    "main_test_samples": 38331,
+    "human_test_samples": 362,
+    "llm_test_samples": 3996
+  },
+  "evaluation_metrics": {
+    "main_test": {
+      "split_name": "Main Test Set (Held-Out Real)",
+      "sample_count": 38331,
+      "benign_count": 21437,
+      "phishing_count": 16894,
+      "decision_threshold": 0.4,
+      "accuracy": 0.966607,
+      "precision": 0.948009,
+      "recall": 0.977862,
+      "phishing_recall": 0.977862,
+      "f1_score": 0.962704,
+      "roc_auc": 0.995359,
+      "pr_auc": 0.993865,
+      "confusion_matrix": {
+        "true_negatives": 20531,
+        "false_positives": 906,
+        "false_negatives": 374,
+        "true_positives": 16520,
+        "matrix_2x2": [
+          [
+            20531,
+            906
+          ],
+          [
+            374,
+            16520
+          ]
+        ]
+      },
+      "false_positive_rate": 0.042263,
+      "false_negative_rate": 0.022138,
+      "brier_score": 0.024178,
+      "log_loss": 0.084511,
+      "expected_calibration_error": 0.002951
+    },
+    "human_test": {
+      "split_name": "Human Test Set (Ground Truth)",
+      "sample_count": 362,
+      "benign_count": 212,
+      "phishing_count": 150,
+      "decision_threshold": 0.4,
+      "accuracy": 0.955801,
+      "precision": 0.924051,
+      "recall": 0.973333,
+      "phishing_recall": 0.973333,
+      "f1_score": 0.948052,
+      "roc_auc": 0.985535,
+      "pr_auc": 0.974946,
+      "confusion_matrix": {
+        "true_negatives": 200,
+        "false_positives": 12,
+        "false_negatives": 4,
+        "true_positives": 146,
+        "matrix_2x2": [
+          [
+            200,
+            12
+          ],
+          [
+            4,
+            146
+          ]
+        ]
+      },
+      "false_positive_rate": 0.056604,
+      "false_negative_rate": 0.026667,
+      "brier_score": 0.042396,
+      "log_loss": 0.149492,
+      "expected_calibration_error": 0.046971
+    },
+    "llm_robustness_test": {
+      "split_name": "LLM Robustness Test Set (Synthetic)",
+      "sample_count": 3996,
+      "benign_count": 1998,
+      "phishing_count": 1998,
+      "decision_threshold": 0.4,
+      "accuracy": 0.912913,
+      "precision": 0.947397,
+      "recall": 0.874374,
+      "phishing_recall": 0.874374,
+      "f1_score": 0.909422,
+      "roc_auc": 0.979113,
+      "pr_auc": 0.970044,
+      "confusion_matrix": {
+        "true_negatives": 1901,
+        "false_positives": 97,
+        "false_negatives": 251,
+        "true_positives": 1747,
+        "matrix_2x2": [
+          [
+            1901,
+            97
+          ],
+          [
+            251,
+            1747
+          ]
+        ]
+      },
+      "false_positive_rate": 0.048549,
+      "false_negative_rate": 0.125626,
+      "brier_score": 0.075458,
+      "log_loss": 0.236731,
+      "expected_calibration_error": 0.095323
+    }
+  }
+}

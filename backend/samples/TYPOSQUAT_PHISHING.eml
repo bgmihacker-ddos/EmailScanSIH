@@ -1,0 +1,21 @@
+From: "Microsoft Support" <support@micosoft-service.com>
+To: security@example.com
+Subject: Critical Security Alert: Your Microsoft 365 Password Expires Today
+Date: Tue, 13 Sep 2026 14:30:00 +0000
+Message-ID: <typosquat-777@micosoft-service.com>
+Received: from mailout.micosoft-service.com (198.51.100.123) by mx.example.com
+Authentication-Results: mx.example.com; spf=pass (mx.example.com: domain of support@micosoft-service.com designates 198.51.100.123 as permitted sender) smtp.mailfrom=support@micosoft-service.com; dkim=pass header.i=@micosoft-service.com; dmarc=pass header.from=micosoft-service.com
+Content-Type: text/plain; charset="UTF-8"
+
+Hello,
+
+Your Microsoft 365 Exchange password for security@example.com is set to expire in 2 hours.
+
+You must retain your current password to continue using Outlook, OneDrive, and Teams without interruption.
+
+Please click the secure Microsoft portal link below to keep your current password active:
+https://login.micosoft-service.com/auth/login?user=security@example.com
+
+If this action is not completed, your email services will be disconnected globally.
+
+Microsoft Security Team

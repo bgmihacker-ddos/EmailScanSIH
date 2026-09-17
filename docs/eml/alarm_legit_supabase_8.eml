@@ -1,0 +1,24 @@
+Return-Path: <"Supabase Security" <notifications@supabase.io>>
+Delivered-To: team-member-8@enterprise.org
+Received: from mail.supabase.io (mail.supabase.io [198.51.100.18]) by mx.google.com with ESMTP id 977ecf8f1d3a; Thu, 10 Sep 2026 16:21:32 +0000
+Received-SPF: pass (supabase.io: domain designates 198.51.100.18 as permitted sender) client-ip=198.51.100.18;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=supabase.io; dkim=pass header.i=@supabase.io; dmarc=pass header.from=supabase.io
+From: "Supabase Security" <notifications@supabase.io>
+To: team-member-8@enterprise.org
+Subject: [Notice] Database migration completed on project 'auth-vault'
+Date: Thu, 10 Sep 2026 16:21:32 +0000
+Message-ID: <2b40a046-cf05-40a6-90d4-282e6e650a43@supabase.io>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Official notification from Supabase.
+
+[Notice] Database migration completed on project 'auth-vault'.
+
+This automated security communication was generated to protect your enterprise account.
+Please review your configuration or activity:
+https://app.supabase.com/project/auth-vault
+
+If you have questions, please reach out to our official verified support team.
+Supabase Customer Trust & Security.

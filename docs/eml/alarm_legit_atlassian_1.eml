@@ -1,0 +1,24 @@
+Return-Path: <"Atlassian Security" <jira@atlassian.net>>
+Delivered-To: team-member-1@enterprise.org
+Received: from mail.atlassian.net (mail.atlassian.net [198.51.100.11]) by mx.google.com with ESMTP id dd05e5dc4e7e; Fri, 11 Sep 2026 04:17:32 +0000
+Received-SPF: pass (atlassian.net: domain designates 198.51.100.11 as permitted sender) client-ip=198.51.100.11;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=atlassian.net; dkim=pass header.i=@atlassian.net; dmarc=pass header.from=atlassian.net
+From: "Atlassian Security" <jira@atlassian.net>
+To: team-member-1@enterprise.org
+Subject: Security: Admin permissions granted to service-account-prod
+Date: Fri, 11 Sep 2026 04:17:32 +0000
+Message-ID: <a37b3196-ad97-4dc7-8c16-31a4983fed3c@atlassian.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Official notification from Atlassian.
+
+Security: Admin permissions granted to service-account-prod.
+
+This automated security communication was generated to protect your enterprise account.
+Please review your configuration or activity:
+https://enterprise.atlassian.net/admin
+
+If you have questions, please reach out to our official verified support team.
+Atlassian Customer Trust & Security.

@@ -1,0 +1,4 @@
+id,name,email,password_hash,role,is_active,created_at,updated_at
+"8d40db8d-6e3f-463d-9c4e-7d9d2f58aa01","Admin User","admin@example.com","$2b$12$L0YI6m2YO1Q9j6pZ1e3ESeavRZcA4Jv9O9M4qk28uR2gQk7oc2M6O","admin",true,"2026-09-01T10:00:00Z","2026-09-01T10:00:00Z"
+"2e7d35dc-5de1-4d32-a5a3-1b3c8d17d6d1","Analyst User","analyst@example.com","$2b$12$L0YI6m2YO1Q9j6pZ1e3ESeavRZcA4Jv9O9M4qk28uR2gQk7oc2M6O","analyst",true,"2026-09-01T10:30:00Z","2026-09-01T10:30:00Z"
+"3f3f9f7a-1d63-4ef7-a927-7b6d96030066","Regular User","user@example.com","$2b$12$L0YI6m2YO1Q9j6pZ1e3ESeavRZcA4Jv9O9M4qk28uR2gQk7oc2M6O","user",true,"2026-09-01T11:00:00Z","2026-09-01T11:00:00Z"

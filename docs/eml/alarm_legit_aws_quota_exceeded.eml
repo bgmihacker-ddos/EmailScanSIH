@@ -1,0 +1,26 @@
+Return-Path: <"Amazon Web Services" <no-reply-aws@amazon.com>>
+Delivered-To: sysadmin@enterprise.org
+Received: from mail.amazon.com (mail.amazon.com [54.240.11.2]) by mx.google.com with ESMTP id 3dd64d12212f; Sat, 12 Sep 2026 04:19:32 +0000
+Received-SPF: pass (amazon.com: domain designates 54.240.11.2 as permitted sender) client-ip=54.240.11.2;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=amazon.com; dkim=pass header.i=@amazon.com; dmarc=pass header.from=amazon.com
+From: "Amazon Web Services" <no-reply-aws@amazon.com>
+To: sysadmin@enterprise.org
+Subject: AWS CloudWatch Alarm: EC2 CPUUtilization > 95% in us-east-1
+Date: Sat, 12 Sep 2026 04:19:32 +0000
+Message-ID: <5f59cc1e-2df1-4ead-aecb-63b6cb979832@amazon.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You are receiving this email because your Amazon CloudWatch Alarm "Prod-Web-CPU-Critical" in the US East (N. Virginia) region entered the ALARM state.
+
+Reason for State Change: Threshold Crossed: 1 out of 1 datapoints [97.8%] was greater than the threshold (95.0%).
+Alarm Details:
+- Name: Prod-Web-CPU-Critical
+- Metric: CPUUtilization
+- Namespace: AWS/EC2
+
+View in AWS Management Console:
+https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#alarmsV2:alarm/Prod-Web-CPU-Critical
+
+Amazon Web Services, Inc.

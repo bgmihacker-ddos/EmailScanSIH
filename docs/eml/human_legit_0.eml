@@ -1,0 +1,22 @@
+Return-Path: <Jesus Miguel Recuenco Ezquerra <JMRECU@teleline.es>>
+Delivered-To: team@enterprise.org
+Received: from mail.teleline.es (mail.teleline.es [209.85.220.41]) by mx.google.com with ESMTP id 0ba0da418102; Wed, 16 Sep 2026 14:37:32 +0000
+Received-SPF: pass (teleline.es: domain designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=teleline.es; dkim=pass header.i=@teleline.es; dmarc=pass header.from=teleline.es
+From: Jesus Miguel Recuenco Ezquerra <JMRECU@teleline.es>
+To: team@enterprise.org
+Subject: Starting IC with wizard
+Date: Wed, 16 Sep 2026 14:37:32 +0000
+Message-ID: <7aaa18b9-8032-4f56-a4ce-53b6443ef660@teleline.es>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi
+
+		I am running the IR test program from Max Davies. To do this I need to start
+IC with thw wizard option. As I have a macintosh, there is a wizard option for
+the mac version of IC?
+
+Jesus
+

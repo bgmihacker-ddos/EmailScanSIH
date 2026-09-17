@@ -1,0 +1,24 @@
+Return-Path: <"ICICI Bank Security" <creditcards@icicibank.com>>
+Delivered-To: team-member-11@enterprise.org
+Received: from mail.icicibank.com (mail.icicibank.com [198.51.100.21]) by mx.google.com with ESMTP id 24bdf2ff545f; Tue, 15 Sep 2026 06:20:32 +0000
+Received-SPF: pass (icicibank.com: domain designates 198.51.100.21 as permitted sender) client-ip=198.51.100.21;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=icicibank.com; dkim=pass header.i=@icicibank.com; dmarc=pass header.from=icicibank.com
+From: "ICICI Bank Security" <creditcards@icicibank.com>
+To: team-member-11@enterprise.org
+Subject: Transaction Alert: INR 4,500.00 spent on ICICI Credit Card xx1004
+Date: Tue, 15 Sep 2026 06:20:32 +0000
+Message-ID: <a31319b7-b308-45a4-8924-3c79c9d73790@icicibank.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Official notification from ICICI Bank.
+
+Transaction Alert: INR 4,500.00 spent on ICICI Credit Card xx1004.
+
+This automated security communication was generated to protect your enterprise account.
+Please review your configuration or activity:
+https://www.icicibank.com/personal-banking
+
+If you have questions, please reach out to our official verified support team.
+ICICI Bank Customer Trust & Security.

@@ -1,0 +1,33 @@
+From: "Internal Communications" <newsletter@company.internal>
+To: "Employee" <user@company.internal>
+Subject: Monthly Engineering Newsletter - September 2026
+Date: Mon, 07 Sep 2026 09:00:00 +0000
+Message-ID: <news-20260907-001@company.internal>
+Return-Path: <newsletter@company.internal>
+Reply-To: <newsletter@company.internal>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Received: from mx1.company.internal (mx1.company.internal [10.0.0.10])
+    by mail.company.internal (Postfix) with ESMTPS id A1B2C3D4E5
+    for <user@company.internal>; Mon, 07 Sep 2026 09:00:05 +0000
+Received: from mailout.company.internal (mailout.company.internal [10.0.0.5])
+    by mx1.company.internal (Postfix) with ESMTP id B2C3D4E5F6
+    for <user@company.internal>; Mon, 07 Sep 2026 09:00:02 +0000
+Authentication-Results: mx1.company.internal;
+    spf=pass (company.internal: sender IP 10.0.0.5 is permitted) smtp.mailfrom=newsletter@company.internal;
+    dkim=pass header.i=@company.internal header.s=s202609;
+    dmarc=pass (p=reject sp=reject) header.from=company.internal
+Received-SPF: pass (company.internal: sender IP 10.0.0.5 is permitted)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=company.internal;
+    s=s202609; t=1725700000;
+    h=from:to:subject:date:message-id:mime-version:content-type;
+    bh=w6kC1QZ8wY8K0h5xR3F0=;
+    b=dGVzdF9zaWduYXR1cmVfZXhhbXBsZQ==
+
+Hello Team,
+
+Here is your monthly digest of technical updates and engineering highlights for September 2026.
+Please check the internal wiki for detailed sprint goals.
+
+Best regards,
+Internal Communications Team

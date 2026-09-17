@@ -1,0 +1,24 @@
+Return-Path: <"Dropbox Security" <no-reply@dropbox.com>>
+Delivered-To: team-member-2@enterprise.org
+Received: from mail.dropbox.com (mail.dropbox.com [198.51.100.12]) by mx.google.com with ESMTP id fdcebe5bfb84; Thu, 17 Sep 2026 07:05:32 +0000
+Received-SPF: pass (dropbox.com: domain designates 198.51.100.12 as permitted sender) client-ip=198.51.100.12;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=dropbox.com; dkim=pass header.i=@dropbox.com; dmarc=pass header.from=dropbox.com
+From: "Dropbox Security" <no-reply@dropbox.com>
+To: team-member-2@enterprise.org
+Subject: Your Dropbox storage is 92% full - upgrade or delete files
+Date: Thu, 17 Sep 2026 07:05:32 +0000
+Message-ID: <8c35054f-0d95-4095-9c61-90e9e9f71c67@dropbox.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Official notification from Dropbox.
+
+Your Dropbox storage is 92% full - upgrade or delete files.
+
+This automated security communication was generated to protect your enterprise account.
+Please review your configuration or activity:
+https://www.dropbox.com/account/plan
+
+If you have questions, please reach out to our official verified support team.
+Dropbox Customer Trust & Security.

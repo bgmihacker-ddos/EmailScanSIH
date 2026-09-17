@@ -1,0 +1,25 @@
+Return-Path: <"Stripe Support" <support@stripe.com>>
+Delivered-To: finance@enterprise.org
+Received: from mail.stripe.com (mail.stripe.com [199.255.192.14]) by mx.google.com with ESMTP id 70ab8f0051fa; Thu, 10 Sep 2026 19:08:32 +0000
+Received-SPF: pass (stripe.com: domain designates 199.255.192.14 as permitted sender) client-ip=199.255.192.14;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=stripe.com; dkim=pass header.i=@stripe.com; dmarc=pass header.from=stripe.com
+From: "Stripe Support" <support@stripe.com>
+To: finance@enterprise.org
+Subject: Action needed: Identity verification required to resume payouts
+Date: Thu, 10 Sep 2026 19:08:32 +0000
+Message-ID: <bc95ae94-db41-432d-867b-a2c599c4b664@stripe.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hello,
+
+Due to updated financial regulations (FinCEN CDD rule), we need to re-verify the beneficial ownership information for your Stripe account.
+
+Payouts to your bank account are currently paused until this information is confirmed. Your ability to accept card payments from customers is not affected.
+
+Please submit your verification documents securely through your Stripe Dashboard:
+https://dashboard.stripe.com/verify
+
+Thanks,
+The Stripe Team

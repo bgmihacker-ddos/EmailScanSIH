@@ -1,0 +1,26 @@
+From: "Apple Security Team" <support@notifications-appleid.com>
+To: "User" <target@domain.org>
+Subject: Security Notification: Unauthorized sign-in attempt detected
+Date: Mon, 07 Sep 2026 15:20:00 +0000
+Message-ID: <appl-sec-20260907@notifications-appleid.com>
+Return-Path: <notice@notifications-appleid.com>
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+Received: from mx.domain.org (mx.domain.org [192.0.2.75])
+    by mail.domain.org with ESMTP id A9P8L7
+    for <target@domain.org>; Mon, 07 Sep 2026 15:20:05 +0000
+Authentication-Results: mx.domain.org;
+    spf=neutral smtp.mailfrom=notice@notifications-appleid.com;
+    dkim=none;
+    dmarc=none
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Your Apple ID was used to sign in to iCloud on a new device.</h2>
+<p>Date: September 7, 2026</p>
+<p>Location: Moscow, Russia</p>
+<p>If this was not you, lock your account immediately by verifying your details:</p>
+<p><a href="http://admin:token@xn--pple-43d.com:8080/account/verify">Lock Apple ID Now</a></p>
+</body>
+</html>

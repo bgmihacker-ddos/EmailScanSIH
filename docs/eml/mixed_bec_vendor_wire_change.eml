@@ -1,0 +1,48 @@
+Delivered-To: finance@yourcompany.com
+Received: by 2002:a17:902:d541:b0:1d2:a194:5621 with SMTP id w1csp512089pld;
+        Wed, 17 Sep 2026 05:22:10 -0700 (PDT)
+Return-Path: <sarah.jenkins@apex-industrials.com>
+Received: from mail.apex-industrials.com (mail.apex-industrials.com. [192.0.2.145])
+        by mx.google.com with ESMTP id y12si882319plm.12.2026.09.17.05.22.09
+        for <finance@yourcompany.com>;
+        Wed, 17 Sep 2026 05:22:10 -0700 (PDT)
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of sarah.jenkins@apex-industrials.com designates 192.0.2.145 as permitted sender) smtp.mailfrom=sarah.jenkins@apex-industrials.com;
+       dkim=pass header.i=@apex-industrials.com;
+       dmarc=pass (p=REJECT) header.from=apex-industrials.com
+From: "Sarah Jenkins - Accounts Receivable" <sarah.jenkins@apex-industrials.com>
+Reply-To: sarah.jenkins.remittance@fastmail-portal.net
+To: finance@yourcompany.com
+Subject: Regarding Invoice #APX-49210 - Updated Remittance Banking Instructions
+Date: Wed, 17 Sep 2026 12:22:00 +0000
+Message-ID: <APX-FIN-20260917-009182@apex-industrials.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Good morning Accounts Payable Team,
+
+I hope you are having a productive week.
+
+Following up on our pending quarterly invoice #APX-49210 scheduled for processing this Friday ($48,500.00 USD), please be advised that our corporate treasury has transitioned our commercial deposit accounts as part of our annual banking realignment.
+
+To avoid any wire bounce-backs or transaction delays, please update your vendor master records with our new electronic funds transfer coordinates for this and all future remittances:
+
+Beneficiary Bank: Metropolitan Commercial Trust
+Account Name: Apex Industrial Solutions LLC
+Account Number: 9821-4402-1928
+ABA / Routing Number: 021000089
+SWIFT Code: MCTRUS33XXX
+
+Could you please confirm receipt of this update and provide a revised payment confirmation once the wire remittance has been queued? 
+
+Thank you for your ongoing partnership.
+
+Warm regards,
+
+Sarah Jenkins
+Senior Billing & Remittance Specialist
+Apex Industrial Solutions LLC
+Direct: +1 (555) 019-2834
+www.apex-industrials.com
+

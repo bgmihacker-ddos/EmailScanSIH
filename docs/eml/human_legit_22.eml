@@ -1,0 +1,47 @@
+Return-Path: <Basil Chupin <oztzqpzo@tpg.com.au>>
+Delivered-To: team@enterprise.org
+Received: from mail.tpg.com.au (mail.tpg.com.au [209.85.220.41]) by mx.google.com with ESMTP id 8eef0837fc23; Wed, 16 Sep 2026 02:53:32 +0000
+Received-SPF: pass (tpg.com.au: domain designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=tpg.com.au; dkim=pass header.i=@tpg.com.au; dmarc=pass header.from=tpg.com.au
+From: Basil Chupin <oztzqpzo@tpg.com.au>
+To: team@enterprise.org
+Subject: Re: [opensuse] OpenSuse 11
+Date: Wed, 16 Sep 2026 02:53:32 +0000
+Message-ID: <85936e2c-c830-490e-a039-de83e7bb0979@tpg.com.au>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Doug McGarrett wrote:
+> On Friday 08 February 2008 23:50, Basil Chupin wrote:
+>
+>
+>   
+>> Of course, it is in XP Professional that most people who use it at home
+>> who never get past the first account - the Administrator - and do not
+>> create a user with limited access rights.
+>>
+>> The need to create a normal, limited access, user in XP Professional is
+>> not something which is enforced in Professional which is why, I
+>> understand, most XP Prof. setups are being run by a home user with full
+>> Admin. rights. I cannot see why the Home edition should be more security
+>> conscious than the Professional edition, and also cost much less, unless
+>> SP1 and SP2 introduced the ability to create limited-access users in the
+>> Home edition.
+>>
+>> Ciao.
+>>     
+>
+> I have XP Pro at home.  How do I access the Administrator account, so that
+> I can unzip some files that have been sent to me?  AFAIR, the install did not
+> ask me for a password, so I don't have one--that I know of.  What an idiot 
+> system!
+>   
+See my response in opensuse offtopic under Subject XP Pro/Home Edition.
+
+Ciao
+
+-- 
+If you want to know what a man is like, take a look at how he treats his inferiors not his equals.
+
+

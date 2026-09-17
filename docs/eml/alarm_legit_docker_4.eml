@@ -1,0 +1,24 @@
+Return-Path: <"Docker Security" <notifications@docker.com>>
+Delivered-To: team-member-4@enterprise.org
+Received: from mail.docker.com (mail.docker.com [198.51.100.14]) by mx.google.com with ESMTP id e2e0c66d1774; Mon, 14 Sep 2026 15:25:32 +0000
+Received-SPF: pass (docker.com: domain designates 198.51.100.14 as permitted sender) client-ip=198.51.100.14;
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=docker.com; dkim=pass header.i=@docker.com; dmarc=pass header.from=docker.com
+From: "Docker Security" <notifications@docker.com>
+To: team-member-4@enterprise.org
+Subject: Critical security vulnerability found in repository base-python:3.11
+Date: Mon, 14 Sep 2026 15:25:32 +0000
+Message-ID: <a8015519-c652-4523-818b-d6bb921d3ec0@docker.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Official notification from Docker.
+
+Critical security vulnerability found in repository base-python:3.11.
+
+This automated security communication was generated to protect your enterprise account.
+Please review your configuration or activity:
+https://hub.docker.com/security
+
+If you have questions, please reach out to our official verified support team.
+Docker Customer Trust & Security.
